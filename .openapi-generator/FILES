@@ -17,6 +17,8 @@ cbbd/api_response.py
 cbbd/configuration.py
 cbbd/exceptions.py
 cbbd/models/__init__.py
+cbbd/models/conference_history.py
+cbbd/models/conference_history_teams_inner.py
 cbbd/models/conference_info.py
 cbbd/models/game_box_score_players.py
 cbbd/models/game_box_score_players_players_inner.py
@@ -33,6 +35,9 @@ cbbd/models/play_type_info.py
 cbbd/models/player_season_stats.py
 cbbd/models/season_type.py
 cbbd/models/team_info.py
+cbbd/models/team_roster.py
+cbbd/models/team_roster_player.py
+cbbd/models/team_roster_player_hometown.py
 cbbd/models/team_season_stats.py
 cbbd/models/team_season_unit_stats.py
 cbbd/models/team_season_unit_stats_field_goals.py
@@ -44,6 +49,8 @@ cbbd/models/team_season_unit_stats_turnovers.py
 cbbd/models/venue_info.py
 cbbd/py.typed
 cbbd/rest.py
+docs/ConferenceHistory.md
+docs/ConferenceHistoryTeamsInner.md
 docs/ConferenceInfo.md
 docs/ConferencesApi.md
 docs/GameBoxScorePlayers.md
@@ -64,6 +71,9 @@ docs/PlaysApi.md
 docs/SeasonType.md
 docs/StatsApi.md
 docs/TeamInfo.md
+docs/TeamRoster.md
+docs/TeamRosterPlayer.md
+docs/TeamRosterPlayerHometown.md
 docs/TeamSeasonStats.md
 docs/TeamSeasonUnitStats.md
 docs/TeamSeasonUnitStatsFieldGoals.md
@@ -82,6 +92,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_conference_history.py
+test/test_conference_history_teams_inner.py
 test/test_conference_info.py
 test/test_conferences_api.py
 test/test_game_box_score_players.py
@@ -102,6 +114,9 @@ test/test_plays_api.py
 test/test_season_type.py
 test/test_stats_api.py
 test/test_team_info.py
+test/test_team_roster.py
+test/test_team_roster_player.py
+test/test_team_roster_player_hometown.py
 test/test_team_season_stats.py
 test/test_team_season_unit_stats.py
 test/test_team_season_unit_stats_field_goals.py
