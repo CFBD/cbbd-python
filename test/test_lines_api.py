@@ -15,26 +15,26 @@
 
 import unittest
 
-from cbbd.api.stats_api import StatsApi  # noqa: E501
+from cbbd.api.lines_api import LinesApi  # noqa: E501
 
 
-class TestStatsApi(unittest.TestCase):
-    """StatsApi unit test stubs"""
+class TestLinesApi(unittest.TestCase):
+    """LinesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = StatsApi()
+        self.api = LinesApi()
 
     def tearDown(self) -> None:
         self.api.api_client.close()
 
-    def test_get_player_season_stats(self) -> None:
-        """Test case for get_player_season_stats
+    def test_get_lines(self) -> None:
+        """Test case for get_lines
 
         """
         pass
 
-    def test_get_team_season_stats(self) -> None:
-        """Test case for get_team_season_stats
+    def test_get_providers(self) -> None:
+        """Test case for get_providers
 
         """
         pass

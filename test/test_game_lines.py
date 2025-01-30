@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.game_media_info import GameMediaInfo  # noqa: E501
+from cbbd.models.game_lines import GameLines  # noqa: E501
 
-class TestGameMediaInfo(unittest.TestCase):
-    """GameMediaInfo unit test stubs"""
+class TestGameLines(unittest.TestCase):
+    """GameLines unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,66 +27,68 @@ class TestGameMediaInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> GameMediaInfo:
-        """Test GameMediaInfo
+    def make_instance(self, include_optional) -> GameLines:
+        """Test GameLines
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `GameMediaInfo`
+        # uncomment below to create an instance of `GameLines`
         """
-        model = GameMediaInfo()  # noqa: E501
+        model = GameLines()  # noqa: E501
         if include_optional:
-            return GameMediaInfo(
+            return GameLines(
                 game_id = 56,
                 season = 56,
-                season_label = '',
                 season_type = 'postseason',
                 start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                start_time_tbd = True,
                 home_team_id = 56,
                 home_team = '',
                 home_conference = '',
+                home_score = 1.337,
                 away_team_id = 56,
                 away_team = '',
                 away_conference = '',
-                neutral_site = True,
-                conference_game = True,
-                game_type = '',
-                notes = '',
-                broadcasts = [
-                    cbbd.models.game_media_info_broadcasts_inner.GameMediaInfo_broadcasts_inner(
-                        broadcast_name = '', 
-                        broadcast_type = '', )
+                away_score = 1.337,
+                lines = [
+                    cbbd.models.game_line_info.GameLineInfo(
+                        provider = '', 
+                        spread = 1.337, 
+                        over_under = 1.337, 
+                        home_moneyline = 1.337, 
+                        away_moneyline = 1.337, 
+                        spread_open = 1.337, 
+                        over_under_open = 1.337, )
                     ]
             )
         else:
-            return GameMediaInfo(
+            return GameLines(
                 game_id = 56,
                 season = 56,
-                season_label = '',
                 season_type = 'postseason',
                 start_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                start_time_tbd = True,
                 home_team_id = 56,
                 home_team = '',
                 home_conference = '',
+                home_score = 1.337,
                 away_team_id = 56,
                 away_team = '',
                 away_conference = '',
-                neutral_site = True,
-                conference_game = True,
-                game_type = '',
-                notes = '',
-                broadcasts = [
-                    cbbd.models.game_media_info_broadcasts_inner.GameMediaInfo_broadcasts_inner(
-                        broadcast_name = '', 
-                        broadcast_type = '', )
+                away_score = 1.337,
+                lines = [
+                    cbbd.models.game_line_info.GameLineInfo(
+                        provider = '', 
+                        spread = 1.337, 
+                        over_under = 1.337, 
+                        home_moneyline = 1.337, 
+                        away_moneyline = 1.337, 
+                        spread_open = 1.337, 
+                        over_under_open = 1.337, )
                     ],
         )
         """
 
-    def testGameMediaInfo(self):
-        """Test GameMediaInfo"""
+    def testGameLines(self):
+        """Test GameLines"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

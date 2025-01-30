@@ -22,13 +22,13 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 
-class PlayInfoParticipantsInner(BaseModel):
+class LineProviderInfo(BaseModel):
     """
-    PlayInfoParticipantsInner
+    LineProviderInfo
     """
-    name: StrictStr = Field(...)
     id: StrictInt = Field(...)
-    __properties = ["name", "id"]
+    name: StrictStr = Field(...)
+    __properties = ["id", "name"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +44,8 @@ class PlayInfoParticipantsInner(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PlayInfoParticipantsInner:
-        """Create an instance of PlayInfoParticipantsInner from a JSON string"""
+    def from_json(cls, json_str: str) -> LineProviderInfo:
+        """Create an instance of LineProviderInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -57,17 +57,17 @@ class PlayInfoParticipantsInner(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PlayInfoParticipantsInner:
-        """Create an instance of PlayInfoParticipantsInner from a dict"""
+    def from_dict(cls, obj: dict) -> LineProviderInfo:
+        """Create an instance of LineProviderInfo from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PlayInfoParticipantsInner.parse_obj(obj)
+            return LineProviderInfo.parse_obj(obj)
 
-        _obj = PlayInfoParticipantsInner.parse_obj({
-            "name": obj.get("name"),
-            "id": obj.get("id")
+        _obj = LineProviderInfo.parse_obj({
+            "id": obj.get("id"),
+            "name": obj.get("name")
         })
         return _obj
 

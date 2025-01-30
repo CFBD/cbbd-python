@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.venue_info import VenueInfo  # noqa: E501
+from cbbd.models.game_line_info import GameLineInfo  # noqa: E501
 
-class TestVenueInfo(unittest.TestCase):
-    """VenueInfo unit test stubs"""
+class TestGameLineInfo(unittest.TestCase):
+    """GameLineInfo unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,36 +27,38 @@ class TestVenueInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> VenueInfo:
-        """Test VenueInfo
+    def make_instance(self, include_optional) -> GameLineInfo:
+        """Test GameLineInfo
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `VenueInfo`
+        # uncomment below to create an instance of `GameLineInfo`
         """
-        model = VenueInfo()  # noqa: E501
+        model = GameLineInfo()  # noqa: E501
         if include_optional:
-            return VenueInfo(
-                id = 1.337,
-                source_id = '',
-                name = '',
-                city = '',
-                state = '',
-                country = ''
+            return GameLineInfo(
+                provider = '',
+                spread = 1.337,
+                over_under = 1.337,
+                home_moneyline = 1.337,
+                away_moneyline = 1.337,
+                spread_open = 1.337,
+                over_under_open = 1.337
             )
         else:
-            return VenueInfo(
-                id = 1.337,
-                source_id = '',
-                name = '',
-                city = '',
-                state = '',
-                country = '',
+            return GameLineInfo(
+                provider = '',
+                spread = 1.337,
+                over_under = 1.337,
+                home_moneyline = 1.337,
+                away_moneyline = 1.337,
+                spread_open = 1.337,
+                over_under_open = 1.337,
         )
         """
 
-    def testVenueInfo(self):
-        """Test VenueInfo"""
+    def testGameLineInfo(self):
+        """Test GameLineInfo"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
