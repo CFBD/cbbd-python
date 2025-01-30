@@ -10,6 +10,7 @@ cbbd/api/conferences_api.py
 cbbd/api/games_api.py
 cbbd/api/lines_api.py
 cbbd/api/plays_api.py
+cbbd/api/ratings_api.py
 cbbd/api/stats_api.py
 cbbd/api/teams_api.py
 cbbd/api/venues_api.py
@@ -38,6 +39,7 @@ cbbd/models/play_info_participants_inner.py
 cbbd/models/play_type_info.py
 cbbd/models/player_season_stats.py
 cbbd/models/season_type.py
+cbbd/models/srs_info.py
 cbbd/models/team_info.py
 cbbd/models/team_roster.py
 cbbd/models/team_roster_player.py
@@ -76,7 +78,9 @@ docs/PlayInfoParticipantsInner.md
 docs/PlayTypeInfo.md
 docs/PlayerSeasonStats.md
 docs/PlaysApi.md
+docs/RatingsApi.md
 docs/SeasonType.md
+docs/SrsInfo.md
 docs/StatsApi.md
 docs/TeamInfo.md
 docs/TeamRoster.md
@@ -123,7 +127,9 @@ test/test_play_info_participants_inner.py
 test/test_play_type_info.py
 test/test_player_season_stats.py
 test/test_plays_api.py
+test/test_ratings_api.py
 test/test_season_type.py
+test/test_srs_info.py
 test/test_stats_api.py
 test/test_team_info.py
 test/test_team_roster.py

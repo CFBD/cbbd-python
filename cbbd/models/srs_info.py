@@ -19,16 +19,19 @@ import re  # noqa: F401
 import json
 
 
+from typing import Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 
-from pydantic import BaseModel, Field, StrictStr
-
-class GameMediaInfoBroadcastsInner(BaseModel):
+class SrsInfo(BaseModel):
     """
-    GameMediaInfoBroadcastsInner
+    SrsInfo
     """
-    broadcast_name: StrictStr = Field(default=..., alias="broadcastName")
-    broadcast_type: StrictStr = Field(default=..., alias="broadcastType")
-    __properties = ["broadcastName", "broadcastType"]
+    season: StrictInt = Field(...)
+    team_id: StrictInt = Field(default=..., alias="teamId")
+    team: StrictStr = Field(...)
+    conference: StrictStr = Field(...)
+    rating: Union[StrictFloat, StrictInt] = Field(...)
+    __properties = ["season", "teamId", "team", "conference", "rating"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +47,8 @@ class GameMediaInfoBroadcastsInner(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> GameMediaInfoBroadcastsInner:
-        """Create an instance of GameMediaInfoBroadcastsInner from a JSON string"""
+    def from_json(cls, json_str: str) -> SrsInfo:
+        """Create an instance of SrsInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -57,17 +60,20 @@ class GameMediaInfoBroadcastsInner(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> GameMediaInfoBroadcastsInner:
-        """Create an instance of GameMediaInfoBroadcastsInner from a dict"""
+    def from_dict(cls, obj: dict) -> SrsInfo:
+        """Create an instance of SrsInfo from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return GameMediaInfoBroadcastsInner.parse_obj(obj)
+            return SrsInfo.parse_obj(obj)
 
-        _obj = GameMediaInfoBroadcastsInner.parse_obj({
-            "broadcast_name": obj.get("broadcastName"),
-            "broadcast_type": obj.get("broadcastType")
+        _obj = SrsInfo.parse_obj({
+            "season": obj.get("season"),
+            "team_id": obj.get("teamId"),
+            "team": obj.get("team"),
+            "conference": obj.get("conference"),
+            "rating": obj.get("rating")
         })
         return _obj
 

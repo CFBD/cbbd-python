@@ -15,38 +15,20 @@
 
 import unittest
 
-from cbbd.api.games_api import GamesApi  # noqa: E501
+from cbbd.api.ratings_api import RatingsApi  # noqa: E501
 
 
-class TestGamesApi(unittest.TestCase):
-    """GamesApi unit test stubs"""
+class TestRatingsApi(unittest.TestCase):
+    """RatingsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = GamesApi()
+        self.api = RatingsApi()
 
     def tearDown(self) -> None:
         self.api.api_client.close()
 
-    def test_get_broadcasts(self) -> None:
-        """Test case for get_broadcasts
-
-        """
-        pass
-
-    def test_get_game_players(self) -> None:
-        """Test case for get_game_players
-
-        """
-        pass
-
-    def test_get_game_teams(self) -> None:
-        """Test case for get_game_teams
-
-        """
-        pass
-
-    def test_get_games(self) -> None:
-        """Test case for get_games
+    def test_get_srs(self) -> None:
+        """Test case for get_srs
 
         """
         pass
