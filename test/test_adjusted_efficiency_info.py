@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.srs_info import SrsInfo  # noqa: E501
+from cbbd.models.adjusted_efficiency_info import AdjustedEfficiencyInfo  # noqa: E501
 
-class TestSrsInfo(unittest.TestCase):
-    """SrsInfo unit test stubs"""
+class TestAdjustedEfficiencyInfo(unittest.TestCase):
+    """AdjustedEfficiencyInfo unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,34 +27,38 @@ class TestSrsInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SrsInfo:
-        """Test SrsInfo
+    def make_instance(self, include_optional) -> AdjustedEfficiencyInfo:
+        """Test AdjustedEfficiencyInfo
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SrsInfo`
+        # uncomment below to create an instance of `AdjustedEfficiencyInfo`
         """
-        model = SrsInfo()  # noqa: E501
+        model = AdjustedEfficiencyInfo()  # noqa: E501
         if include_optional:
-            return SrsInfo(
+            return AdjustedEfficiencyInfo(
                 season = 56,
                 team_id = 56,
                 team = '',
                 conference = '',
-                rating = 1.337
+                offensive_rating = 1.337,
+                defensive_rating = 1.337,
+                net_rating = 1.337
             )
         else:
-            return SrsInfo(
+            return AdjustedEfficiencyInfo(
                 season = 56,
                 team_id = 56,
                 team = '',
                 conference = '',
-                rating = 1.337,
+                offensive_rating = 1.337,
+                defensive_rating = 1.337,
+                net_rating = 1.337,
         )
         """
 
-    def testSrsInfo(self):
-        """Test SrsInfo"""
+    def testAdjustedEfficiencyInfo(self):
+        """Test AdjustedEfficiencyInfo"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

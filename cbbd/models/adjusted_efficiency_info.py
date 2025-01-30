@@ -19,16 +19,21 @@ import re  # noqa: F401
 import json
 
 
+from typing import Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 
-from pydantic import BaseModel, Field, StrictInt, StrictStr
-
-class PlayTypeInfo(BaseModel):
+class AdjustedEfficiencyInfo(BaseModel):
     """
-    PlayTypeInfo
+    AdjustedEfficiencyInfo
     """
-    id: StrictInt = Field(...)
-    name: StrictStr = Field(...)
-    __properties = ["id", "name"]
+    season: StrictInt = Field(...)
+    team_id: StrictInt = Field(default=..., alias="teamId")
+    team: StrictStr = Field(...)
+    conference: StrictStr = Field(...)
+    offensive_rating: Union[StrictFloat, StrictInt] = Field(default=..., alias="offensiveRating")
+    defensive_rating: Union[StrictFloat, StrictInt] = Field(default=..., alias="defensiveRating")
+    net_rating: Union[StrictFloat, StrictInt] = Field(default=..., alias="netRating")
+    __properties = ["season", "teamId", "team", "conference", "offensiveRating", "defensiveRating", "netRating"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +49,8 @@ class PlayTypeInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> PlayTypeInfo:
-        """Create an instance of PlayTypeInfo from a JSON string"""
+    def from_json(cls, json_str: str) -> AdjustedEfficiencyInfo:
+        """Create an instance of AdjustedEfficiencyInfo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -57,17 +62,22 @@ class PlayTypeInfo(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> PlayTypeInfo:
-        """Create an instance of PlayTypeInfo from a dict"""
+    def from_dict(cls, obj: dict) -> AdjustedEfficiencyInfo:
+        """Create an instance of AdjustedEfficiencyInfo from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return PlayTypeInfo.parse_obj(obj)
+            return AdjustedEfficiencyInfo.parse_obj(obj)
 
-        _obj = PlayTypeInfo.parse_obj({
-            "id": obj.get("id"),
-            "name": obj.get("name")
+        _obj = AdjustedEfficiencyInfo.parse_obj({
+            "season": obj.get("season"),
+            "team_id": obj.get("teamId"),
+            "team": obj.get("team"),
+            "conference": obj.get("conference"),
+            "offensive_rating": obj.get("offensiveRating"),
+            "defensive_rating": obj.get("defensiveRating"),
+            "net_rating": obj.get("netRating")
         })
         return _obj
 
