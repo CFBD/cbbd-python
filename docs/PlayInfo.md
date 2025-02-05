@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **seconds_remaining** | **int** |  | 
 **home_score** | **int** |  | 
 **away_score** | **int** |  | 
+**home_win_probability** | **float** |  | 
 **scoring_play** | **bool** |  | 
 **shooting_play** | **bool** |  | 
 **score_value** | **float** |  | 

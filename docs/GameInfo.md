@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **away_points** | **int** |  | 
 **away_period_points** | **List[int]** |  | 
 **away_winner** | **bool** |  | 
+**excitement** | **float** |  | 
 **venue_id** | **int** |  | 
 **venue** | **str** |  | 
 **city** | **str** |  | 
