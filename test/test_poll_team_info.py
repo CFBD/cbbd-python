@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.srs_info import SrsInfo  # noqa: E501
+from cbbd.models.poll_team_info import PollTeamInfo  # noqa: E501
 
-class TestSrsInfo(unittest.TestCase):
-    """SrsInfo unit test stubs"""
+class TestPollTeamInfo(unittest.TestCase):
+    """PollTeamInfo unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,34 +27,46 @@ class TestSrsInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SrsInfo:
-        """Test SrsInfo
+    def make_instance(self, include_optional) -> PollTeamInfo:
+        """Test PollTeamInfo
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SrsInfo`
+        # uncomment below to create an instance of `PollTeamInfo`
         """
-        model = SrsInfo()  # noqa: E501
+        model = PollTeamInfo()  # noqa: E501
         if include_optional:
-            return SrsInfo(
+            return PollTeamInfo(
                 season = 56,
-                team_id = 56,
+                season_type = 'postseason',
+                week = 56,
+                poll_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                poll_type = '',
+                team_id = 1.337,
                 team = '',
                 conference = '',
-                rating = 1.337
+                ranking = 1.337,
+                points = 1.337,
+                first_place_votes = 1.337
             )
         else:
-            return SrsInfo(
+            return PollTeamInfo(
                 season = 56,
-                team_id = 56,
+                season_type = 'postseason',
+                week = 56,
+                poll_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                poll_type = '',
+                team_id = 1.337,
                 team = '',
                 conference = '',
-                rating = 1.337,
+                ranking = 1.337,
+                points = 1.337,
+                first_place_votes = 1.337,
         )
         """
 
-    def testSrsInfo(self):
-        """Test SrsInfo"""
+    def testPollTeamInfo(self):
+        """Test PollTeamInfo"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

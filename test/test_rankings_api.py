@@ -15,26 +15,20 @@
 
 import unittest
 
-from cbbd.api.ratings_api import RatingsApi  # noqa: E501
+from cbbd.api.rankings_api import RankingsApi  # noqa: E501
 
 
-class TestRatingsApi(unittest.TestCase):
-    """RatingsApi unit test stubs"""
+class TestRankingsApi(unittest.TestCase):
+    """RankingsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = RatingsApi()
+        self.api = RankingsApi()
 
     def tearDown(self) -> None:
         self.api.api_client.close()
 
-    def test_get_adjusted_efficiency(self) -> None:
-        """Test case for get_adjusted_efficiency
-
-        """
-        pass
-
-    def test_get_srs(self) -> None:
-        """Test case for get_srs
+    def test_get_rankings(self) -> None:
+        """Test case for get_rankings
 
         """
         pass
