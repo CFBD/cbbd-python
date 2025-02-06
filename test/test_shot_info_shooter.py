@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.line_provider_info import LineProviderInfo  # noqa: E501
+from cbbd.models.shot_info_shooter import ShotInfoShooter  # noqa: E501
 
-class TestLineProviderInfo(unittest.TestCase):
-    """LineProviderInfo unit test stubs"""
+class TestShotInfoShooter(unittest.TestCase):
+    """ShotInfoShooter unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,28 +27,28 @@ class TestLineProviderInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LineProviderInfo:
-        """Test LineProviderInfo
+    def make_instance(self, include_optional) -> ShotInfoShooter:
+        """Test ShotInfoShooter
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `LineProviderInfo`
+        # uncomment below to create an instance of `ShotInfoShooter`
         """
-        model = LineProviderInfo()  # noqa: E501
+        model = ShotInfoShooter()  # noqa: E501
         if include_optional:
-            return LineProviderInfo(
-                id = 56,
-                name = ''
+            return ShotInfoShooter(
+                name = '',
+                id = 56
             )
         else:
-            return LineProviderInfo(
-                id = 56,
+            return ShotInfoShooter(
                 name = '',
+                id = 56,
         )
         """
 
-    def testLineProviderInfo(self):
-        """Test LineProviderInfo"""
+    def testShotInfoShooter(self):
+        """Test ShotInfoShooter"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

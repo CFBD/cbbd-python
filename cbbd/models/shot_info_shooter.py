@@ -19,17 +19,16 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
 
-class TeamRosterPlayerHometown(BaseModel):
+from pydantic import BaseModel, Field, StrictInt, StrictStr
+
+class ShotInfoShooter(BaseModel):
     """
-    TeamRosterPlayerHometown
+    ShotInfoShooter
     """
-    country: Optional[StrictStr] = Field(...)
-    state: Optional[StrictStr] = Field(...)
-    city: Optional[StrictStr] = Field(...)
-    __properties = ["country", "state", "city"]
+    name: StrictStr = Field(...)
+    id: StrictInt = Field(...)
+    __properties = ["name", "id"]
 
     class Config:
         """Pydantic configuration"""
@@ -45,8 +44,8 @@ class TeamRosterPlayerHometown(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> TeamRosterPlayerHometown:
-        """Create an instance of TeamRosterPlayerHometown from a JSON string"""
+    def from_json(cls, json_str: str) -> ShotInfoShooter:
+        """Create an instance of ShotInfoShooter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -55,36 +54,20 @@ class TeamRosterPlayerHometown(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if country (nullable) is None
-        # and __fields_set__ contains the field
-        if self.country is None and "country" in self.__fields_set__:
-            _dict['country'] = None
-
-        # set to None if state (nullable) is None
-        # and __fields_set__ contains the field
-        if self.state is None and "state" in self.__fields_set__:
-            _dict['state'] = None
-
-        # set to None if city (nullable) is None
-        # and __fields_set__ contains the field
-        if self.city is None and "city" in self.__fields_set__:
-            _dict['city'] = None
-
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> TeamRosterPlayerHometown:
-        """Create an instance of TeamRosterPlayerHometown from a dict"""
+    def from_dict(cls, obj: dict) -> ShotInfoShooter:
+        """Create an instance of ShotInfoShooter from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return TeamRosterPlayerHometown.parse_obj(obj)
+            return ShotInfoShooter.parse_obj(obj)
 
-        _obj = TeamRosterPlayerHometown.parse_obj({
-            "country": obj.get("country"),
-            "state": obj.get("state"),
-            "city": obj.get("city")
+        _obj = ShotInfoShooter.parse_obj({
+            "name": obj.get("name"),
+            "id": obj.get("id")
         })
         return _obj
 

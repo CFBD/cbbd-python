@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **wallclock** | **datetime** |  | 
 **play_text** | **str** |  | 
 **participants** | [**List[PlayInfoParticipantsInner]**](PlayInfoParticipantsInner.md) |  | 
+**shot_info** | [**ShotInfo**](ShotInfo.md) |  | 
 
 ## Example
 

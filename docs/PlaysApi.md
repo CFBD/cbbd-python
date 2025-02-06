@@ -84,7 +84,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays**
-> List[PlayInfo] get_plays(game_id)
+> List[PlayInfo] get_plays(game_id, shooting_plays_only=shooting_plays_only)
 
 
 
@@ -122,9 +122,10 @@ with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
     game_id = 56 # int | Game id filter
+    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
 
     try:
-        api_response = api_instance.get_plays(game_id)
+        api_response = api_instance.get_plays(game_id, shooting_plays_only=shooting_plays_only)
         print("The response of PlaysApi->get_plays:\n")
         pprint(api_response)
     except Exception as e:
@@ -138,6 +139,7 @@ with cbbd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **game_id** | **int**| Game id filter | 
+ **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
 
 ### Return type
 
@@ -160,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays_by_date**
-> List[PlayInfo] get_plays_by_date(var_date)
+> List[PlayInfo] get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only)
 
 
 
@@ -198,9 +200,10 @@ with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
     var_date = '2013-10-20T19:20:30+01:00' # datetime | Required date filter in ISO 8601 format (YYYY-MM-DD)
+    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
 
     try:
-        api_response = api_instance.get_plays_by_date(var_date)
+        api_response = api_instance.get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only)
         print("The response of PlaysApi->get_plays_by_date:\n")
         pprint(api_response)
     except Exception as e:
@@ -214,6 +217,7 @@ with cbbd.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **var_date** | **datetime**| Required date filter in ISO 8601 format (YYYY-MM-DD) | 
+ **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
 
 ### Return type
 
@@ -236,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays_by_player_id**
-> List[PlayInfo] get_plays_by_player_id(player_id, season)
+> List[PlayInfo] get_plays_by_player_id(player_id, season, shooting_plays_only=shooting_plays_only)
 
 
 
@@ -275,9 +279,10 @@ with cbbd.ApiClient(configuration) as api_client:
     api_instance = cbbd.PlaysApi(api_client)
     player_id = 56 # int | Required player id filter
     season = 56 # int | Required season filter
+    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
 
     try:
-        api_response = api_instance.get_plays_by_player_id(player_id, season)
+        api_response = api_instance.get_plays_by_player_id(player_id, season, shooting_plays_only=shooting_plays_only)
         print("The response of PlaysApi->get_plays_by_player_id:\n")
         pprint(api_response)
     except Exception as e:
@@ -292,6 +297,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **player_id** | **int**| Required player id filter | 
  **season** | **int**| Required season filter | 
+ **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
 
 ### Return type
 
@@ -314,7 +320,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays_by_team**
-> List[PlayInfo] get_plays_by_team(season, team)
+> List[PlayInfo] get_plays_by_team(season, team, shooting_plays_only=shooting_plays_only)
 
 
 
@@ -353,9 +359,10 @@ with cbbd.ApiClient(configuration) as api_client:
     api_instance = cbbd.PlaysApi(api_client)
     season = 56 # int | Required season filter
     team = 'team_example' # str | Required team filter
+    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
 
     try:
-        api_response = api_instance.get_plays_by_team(season, team)
+        api_response = api_instance.get_plays_by_team(season, team, shooting_plays_only=shooting_plays_only)
         print("The response of PlaysApi->get_plays_by_team:\n")
         pprint(api_response)
     except Exception as e:
@@ -370,6 +377,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **season** | **int**| Required season filter | 
  **team** | **str**| Required team filter | 
+ **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
 
 ### Return type
 
