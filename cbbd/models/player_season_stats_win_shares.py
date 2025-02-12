@@ -22,14 +22,15 @@ import json
 from typing import Optional, Union
 from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
-class TeamSeasonUnitStatsFouls(BaseModel):
+class PlayerSeasonStatsWinShares(BaseModel):
     """
-    TeamSeasonUnitStatsFouls
+    PlayerSeasonStatsWinShares
     """
-    flagrant: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    technical: Optional[Union[StrictFloat, StrictInt]] = Field(...)
+    total_per40: Optional[Union[StrictFloat, StrictInt]] = Field(default=..., alias="totalPer40")
     total: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    __properties = ["flagrant", "technical", "total"]
+    defensive: Optional[Union[StrictFloat, StrictInt]] = Field(...)
+    offensive: Optional[Union[StrictFloat, StrictInt]] = Field(...)
+    __properties = ["totalPer40", "total", "defensive", "offensive"]
 
     class Config:
         """Pydantic configuration"""
@@ -45,8 +46,8 @@ class TeamSeasonUnitStatsFouls(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> TeamSeasonUnitStatsFouls:
-        """Create an instance of TeamSeasonUnitStatsFouls from a JSON string"""
+    def from_json(cls, json_str: str) -> PlayerSeasonStatsWinShares:
+        """Create an instance of PlayerSeasonStatsWinShares from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -55,36 +56,42 @@ class TeamSeasonUnitStatsFouls(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if flagrant (nullable) is None
+        # set to None if total_per40 (nullable) is None
         # and __fields_set__ contains the field
-        if self.flagrant is None and "flagrant" in self.__fields_set__:
-            _dict['flagrant'] = None
-
-        # set to None if technical (nullable) is None
-        # and __fields_set__ contains the field
-        if self.technical is None and "technical" in self.__fields_set__:
-            _dict['technical'] = None
+        if self.total_per40 is None and "total_per40" in self.__fields_set__:
+            _dict['totalPer40'] = None
 
         # set to None if total (nullable) is None
         # and __fields_set__ contains the field
         if self.total is None and "total" in self.__fields_set__:
             _dict['total'] = None
 
+        # set to None if defensive (nullable) is None
+        # and __fields_set__ contains the field
+        if self.defensive is None and "defensive" in self.__fields_set__:
+            _dict['defensive'] = None
+
+        # set to None if offensive (nullable) is None
+        # and __fields_set__ contains the field
+        if self.offensive is None and "offensive" in self.__fields_set__:
+            _dict['offensive'] = None
+
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> TeamSeasonUnitStatsFouls:
-        """Create an instance of TeamSeasonUnitStatsFouls from a dict"""
+    def from_dict(cls, obj: dict) -> PlayerSeasonStatsWinShares:
+        """Create an instance of PlayerSeasonStatsWinShares from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return TeamSeasonUnitStatsFouls.parse_obj(obj)
+            return PlayerSeasonStatsWinShares.parse_obj(obj)
 
-        _obj = TeamSeasonUnitStatsFouls.parse_obj({
-            "flagrant": obj.get("flagrant"),
-            "technical": obj.get("technical"),
-            "total": obj.get("total")
+        _obj = PlayerSeasonStatsWinShares.parse_obj({
+            "total_per40": obj.get("totalPer40"),
+            "total": obj.get("total"),
+            "defensive": obj.get("defensive"),
+            "offensive": obj.get("offensive")
         })
         return _obj
 

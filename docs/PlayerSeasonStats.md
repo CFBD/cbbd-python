@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **offensive_rating** | **float** |  | 
 **defensive_rating** | **float** |  | 
 **net_rating** | **float** |  | 
+**porpag** | **float** |  | 
 **effective_field_goal_pct** | **float** |  | 
 **true_shooting_pct** | **float** |  | 
 **assists_turnover_ratio** | **float** |  | 
@@ -36,7 +37,7 @@ Name | Type | Description | Notes
 **three_point_field_goals** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **free_throws** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **rebounds** | [**TeamSeasonUnitStatsRebounds**](TeamSeasonUnitStatsRebounds.md) |  | 
-**win_shares** | [**TeamSeasonUnitStatsRebounds**](TeamSeasonUnitStatsRebounds.md) |  | 
+**win_shares** | [**PlayerSeasonStatsWinShares**](PlayerSeasonStatsWinShares.md) |  | 
 
 ## Example
 

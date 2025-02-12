@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.conference_info import ConferenceInfo  # noqa: E501
+from cbbd.models.player_season_stats_win_shares import PlayerSeasonStatsWinShares  # noqa: E501
 
-class TestConferenceInfo(unittest.TestCase):
-    """ConferenceInfo unit test stubs"""
+class TestPlayerSeasonStatsWinShares(unittest.TestCase):
+    """PlayerSeasonStatsWinShares unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,34 +27,32 @@ class TestConferenceInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ConferenceInfo:
-        """Test ConferenceInfo
+    def make_instance(self, include_optional) -> PlayerSeasonStatsWinShares:
+        """Test PlayerSeasonStatsWinShares
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `ConferenceInfo`
+        # uncomment below to create an instance of `PlayerSeasonStatsWinShares`
         """
-        model = ConferenceInfo()  # noqa: E501
+        model = PlayerSeasonStatsWinShares()  # noqa: E501
         if include_optional:
-            return ConferenceInfo(
-                id = 56,
-                source_id = '',
-                name = '',
-                abbreviation = '',
-                short_name = ''
+            return PlayerSeasonStatsWinShares(
+                total_per40 = 1.337,
+                total = 1.337,
+                defensive = 1.337,
+                offensive = 1.337
             )
         else:
-            return ConferenceInfo(
-                id = 56,
-                source_id = '',
-                name = '',
-                abbreviation = '',
-                short_name = '',
+            return PlayerSeasonStatsWinShares(
+                total_per40 = 1.337,
+                total = 1.337,
+                defensive = 1.337,
+                offensive = 1.337,
         )
         """
 
-    def testConferenceInfo(self):
-        """Test ConferenceInfo"""
+    def testPlayerSeasonStatsWinShares(self):
+        """Test PlayerSeasonStatsWinShares"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

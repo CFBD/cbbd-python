@@ -40,6 +40,7 @@ cbbd/models/play_info.py
 cbbd/models/play_info_participants_inner.py
 cbbd/models/play_type_info.py
 cbbd/models/player_season_stats.py
+cbbd/models/player_season_stats_win_shares.py
 cbbd/models/poll_team_info.py
 cbbd/models/season_type.py
 cbbd/models/shot_info.py
@@ -83,6 +84,7 @@ docs/PlayInfo.md
 docs/PlayInfoParticipantsInner.md
 docs/PlayTypeInfo.md
 docs/PlayerSeasonStats.md
+docs/PlayerSeasonStatsWinShares.md
 docs/PlaysApi.md
 docs/PollTeamInfo.md
 docs/RankingsApi.md
@@ -137,6 +139,7 @@ test/test_play_info.py
 test/test_play_info_participants_inner.py
 test/test_play_type_info.py
 test/test_player_season_stats.py
+test/test_player_season_stats_win_shares.py
 test/test_plays_api.py
 test/test_poll_team_info.py
 test/test_rankings_api.py
