@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **range** | **str** |  | 
 **assisted** | **bool** |  | 
 **assisted_by** | [**ShotInfoShooter**](ShotInfoShooter.md) |  | 
+**location** | [**ShotInfoLocation**](ShotInfoLocation.md) |  | 
 
 ## Example
 

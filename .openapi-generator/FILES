@@ -44,6 +44,7 @@ cbbd/models/player_season_stats_win_shares.py
 cbbd/models/poll_team_info.py
 cbbd/models/season_type.py
 cbbd/models/shot_info.py
+cbbd/models/shot_info_location.py
 cbbd/models/shot_info_shooter.py
 cbbd/models/srs_info.py
 cbbd/models/team_info.py
@@ -91,6 +92,7 @@ docs/RankingsApi.md
 docs/RatingsApi.md
 docs/SeasonType.md
 docs/ShotInfo.md
+docs/ShotInfoLocation.md
 docs/ShotInfoShooter.md
 docs/SrsInfo.md
 docs/StatsApi.md
@@ -146,6 +148,7 @@ test/test_rankings_api.py
 test/test_ratings_api.py
 test/test_season_type.py
 test/test_shot_info.py
+test/test_shot_info_location.py
 test/test_shot_info_shooter.py
 test/test_srs_info.py
 test/test_stats_api.py

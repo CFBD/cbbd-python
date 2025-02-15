@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.team_season_unit_stats_field_goals import TeamSeasonUnitStatsFieldGoals  # noqa: E501
+from cbbd.models.shot_info_location import ShotInfoLocation  # noqa: E501
 
-class TestTeamSeasonUnitStatsFieldGoals(unittest.TestCase):
-    """TeamSeasonUnitStatsFieldGoals unit test stubs"""
+class TestShotInfoLocation(unittest.TestCase):
+    """ShotInfoLocation unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,30 +27,28 @@ class TestTeamSeasonUnitStatsFieldGoals(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TeamSeasonUnitStatsFieldGoals:
-        """Test TeamSeasonUnitStatsFieldGoals
+    def make_instance(self, include_optional) -> ShotInfoLocation:
+        """Test ShotInfoLocation
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TeamSeasonUnitStatsFieldGoals`
+        # uncomment below to create an instance of `ShotInfoLocation`
         """
-        model = TeamSeasonUnitStatsFieldGoals()  # noqa: E501
+        model = ShotInfoLocation()  # noqa: E501
         if include_optional:
-            return TeamSeasonUnitStatsFieldGoals(
-                pct = 1.337,
-                attempted = 1.337,
-                made = 1.337
+            return ShotInfoLocation(
+                y = 1.337,
+                x = 1.337
             )
         else:
-            return TeamSeasonUnitStatsFieldGoals(
-                pct = 1.337,
-                attempted = 1.337,
-                made = 1.337,
+            return ShotInfoLocation(
+                y = 1.337,
+                x = 1.337,
         )
         """
 
-    def testTeamSeasonUnitStatsFieldGoals(self):
-        """Test TeamSeasonUnitStatsFieldGoals"""
+    def testShotInfoLocation(self):
+        """Test ShotInfoLocation"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -19,17 +19,16 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional, Union
+from typing import Union
 from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
-class TeamSeasonUnitStatsFouls(BaseModel):
+class ShotInfoLocation(BaseModel):
     """
-    TeamSeasonUnitStatsFouls
+    ShotInfoLocation
     """
-    flagrant: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    technical: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    total: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    __properties = ["flagrant", "technical", "total"]
+    y: Union[StrictFloat, StrictInt] = Field(...)
+    x: Union[StrictFloat, StrictInt] = Field(...)
+    __properties = ["y", "x"]
 
     class Config:
         """Pydantic configuration"""
@@ -45,8 +44,8 @@ class TeamSeasonUnitStatsFouls(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> TeamSeasonUnitStatsFouls:
-        """Create an instance of TeamSeasonUnitStatsFouls from a JSON string"""
+    def from_json(cls, json_str: str) -> ShotInfoLocation:
+        """Create an instance of ShotInfoLocation from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -55,36 +54,20 @@ class TeamSeasonUnitStatsFouls(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if flagrant (nullable) is None
-        # and __fields_set__ contains the field
-        if self.flagrant is None and "flagrant" in self.__fields_set__:
-            _dict['flagrant'] = None
-
-        # set to None if technical (nullable) is None
-        # and __fields_set__ contains the field
-        if self.technical is None and "technical" in self.__fields_set__:
-            _dict['technical'] = None
-
-        # set to None if total (nullable) is None
-        # and __fields_set__ contains the field
-        if self.total is None and "total" in self.__fields_set__:
-            _dict['total'] = None
-
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> TeamSeasonUnitStatsFouls:
-        """Create an instance of TeamSeasonUnitStatsFouls from a dict"""
+    def from_dict(cls, obj: dict) -> ShotInfoLocation:
+        """Create an instance of ShotInfoLocation from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return TeamSeasonUnitStatsFouls.parse_obj(obj)
+            return ShotInfoLocation.parse_obj(obj)
 
-        _obj = TeamSeasonUnitStatsFouls.parse_obj({
-            "flagrant": obj.get("flagrant"),
-            "technical": obj.get("technical"),
-            "total": obj.get("total")
+        _obj = ShotInfoLocation.parse_obj({
+            "y": obj.get("y"),
+            "x": obj.get("x")
         })
         return _obj
 
