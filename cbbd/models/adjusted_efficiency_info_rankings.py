@@ -19,16 +19,17 @@ import re  # noqa: F401
 import json
 
 
+from typing import Union
+from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
-from pydantic import BaseModel, Field, StrictStr
-
-class GameMediaInfoBroadcastsInner(BaseModel):
+class AdjustedEfficiencyInfoRankings(BaseModel):
     """
-    GameMediaInfoBroadcastsInner
+    AdjustedEfficiencyInfoRankings
     """
-    broadcast_name: StrictStr = Field(default=..., alias="broadcastName")
-    broadcast_type: StrictStr = Field(default=..., alias="broadcastType")
-    __properties = ["broadcastName", "broadcastType"]
+    net: Union[StrictFloat, StrictInt] = Field(...)
+    defense: Union[StrictFloat, StrictInt] = Field(...)
+    offense: Union[StrictFloat, StrictInt] = Field(...)
+    __properties = ["net", "defense", "offense"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +45,8 @@ class GameMediaInfoBroadcastsInner(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> GameMediaInfoBroadcastsInner:
-        """Create an instance of GameMediaInfoBroadcastsInner from a JSON string"""
+    def from_json(cls, json_str: str) -> AdjustedEfficiencyInfoRankings:
+        """Create an instance of AdjustedEfficiencyInfoRankings from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -57,17 +58,18 @@ class GameMediaInfoBroadcastsInner(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> GameMediaInfoBroadcastsInner:
-        """Create an instance of GameMediaInfoBroadcastsInner from a dict"""
+    def from_dict(cls, obj: dict) -> AdjustedEfficiencyInfoRankings:
+        """Create an instance of AdjustedEfficiencyInfoRankings from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return GameMediaInfoBroadcastsInner.parse_obj(obj)
+            return AdjustedEfficiencyInfoRankings.parse_obj(obj)
 
-        _obj = GameMediaInfoBroadcastsInner.parse_obj({
-            "broadcast_name": obj.get("broadcastName"),
-            "broadcast_type": obj.get("broadcastType")
+        _obj = AdjustedEfficiencyInfoRankings.parse_obj({
+            "net": obj.get("net"),
+            "defense": obj.get("defense"),
+            "offense": obj.get("offense")
         })
         return _obj
 

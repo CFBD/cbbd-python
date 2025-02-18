@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **team** | **str** |  | 
 **conference** | **str** |  | 
 **games** | **int** |  | 
+**wins** | **float** |  | 
+**losses** | **float** |  | 
 **total_minutes** | **float** |  | 
 **pace** | **float** |  | 
 **offense** | [**TeamSeasonUnitStats**](TeamSeasonUnitStats.md) |  | 

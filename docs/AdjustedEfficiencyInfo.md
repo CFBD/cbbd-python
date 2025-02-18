@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **offensive_rating** | **float** |  | 
 **defensive_rating** | **float** |  | 
 **net_rating** | **float** |  | 
+**rankings** | [**AdjustedEfficiencyInfoRankings**](AdjustedEfficiencyInfoRankings.md) |  | 
 
 ## Example
 

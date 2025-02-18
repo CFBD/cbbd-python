@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.team_roster_player_hometown import TeamRosterPlayerHometown  # noqa: E501
+from cbbd.models.adjusted_efficiency_info_rankings import AdjustedEfficiencyInfoRankings  # noqa: E501
 
-class TestTeamRosterPlayerHometown(unittest.TestCase):
-    """TeamRosterPlayerHometown unit test stubs"""
+class TestAdjustedEfficiencyInfoRankings(unittest.TestCase):
+    """AdjustedEfficiencyInfoRankings unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,30 +27,30 @@ class TestTeamRosterPlayerHometown(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TeamRosterPlayerHometown:
-        """Test TeamRosterPlayerHometown
+    def make_instance(self, include_optional) -> AdjustedEfficiencyInfoRankings:
+        """Test AdjustedEfficiencyInfoRankings
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `TeamRosterPlayerHometown`
+        # uncomment below to create an instance of `AdjustedEfficiencyInfoRankings`
         """
-        model = TeamRosterPlayerHometown()  # noqa: E501
+        model = AdjustedEfficiencyInfoRankings()  # noqa: E501
         if include_optional:
-            return TeamRosterPlayerHometown(
-                country = '',
-                state = '',
-                city = ''
+            return AdjustedEfficiencyInfoRankings(
+                net = 1.337,
+                defense = 1.337,
+                offense = 1.337
             )
         else:
-            return TeamRosterPlayerHometown(
-                country = '',
-                state = '',
-                city = '',
+            return AdjustedEfficiencyInfoRankings(
+                net = 1.337,
+                defense = 1.337,
+                offense = 1.337,
         )
         """
 
-    def testTeamRosterPlayerHometown(self):
-        """Test TeamRosterPlayerHometown"""
+    def testAdjustedEfficiencyInfoRankings(self):
+        """Test AdjustedEfficiencyInfoRankings"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

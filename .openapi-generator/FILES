@@ -21,6 +21,7 @@ cbbd/configuration.py
 cbbd/exceptions.py
 cbbd/models/__init__.py
 cbbd/models/adjusted_efficiency_info.py
+cbbd/models/adjusted_efficiency_info_rankings.py
 cbbd/models/conference_history.py
 cbbd/models/conference_history_teams_inner.py
 cbbd/models/conference_info.py
@@ -63,6 +64,7 @@ cbbd/models/venue_info.py
 cbbd/py.typed
 cbbd/rest.py
 docs/AdjustedEfficiencyInfo.md
+docs/AdjustedEfficiencyInfoRankings.md
 docs/ConferenceHistory.md
 docs/ConferenceHistoryTeamsInner.md
 docs/ConferenceInfo.md
@@ -119,6 +121,7 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_adjusted_efficiency_info.py
+test/test_adjusted_efficiency_info_rankings.py
 test/test_conference_history.py
 test/test_conference_history_teams_inner.py
 test/test_conference_info.py
