@@ -13,6 +13,7 @@ cbbd/api/lines_api.py
 cbbd/api/plays_api.py
 cbbd/api/rankings_api.py
 cbbd/api/ratings_api.py
+cbbd/api/recruiting_api.py
 cbbd/api/stats_api.py
 cbbd/api/teams_api.py
 cbbd/api/venues_api.py
@@ -47,6 +48,9 @@ cbbd/models/play_type_info.py
 cbbd/models/player_season_stats.py
 cbbd/models/player_season_stats_win_shares.py
 cbbd/models/poll_team_info.py
+cbbd/models/recruit.py
+cbbd/models/recruit_committed_to.py
+cbbd/models/recruit_hometown.py
 cbbd/models/season_type.py
 cbbd/models/shot_info.py
 cbbd/models/shot_info_location.py
@@ -100,6 +104,10 @@ docs/PlaysApi.md
 docs/PollTeamInfo.md
 docs/RankingsApi.md
 docs/RatingsApi.md
+docs/Recruit.md
+docs/RecruitCommittedTo.md
+docs/RecruitHometown.md
+docs/RecruitingApi.md
 docs/SeasonType.md
 docs/ShotInfo.md
 docs/ShotInfoLocation.md
@@ -161,6 +169,10 @@ test/test_plays_api.py
 test/test_poll_team_info.py
 test/test_rankings_api.py
 test/test_ratings_api.py
+test/test_recruit.py
+test/test_recruit_committed_to.py
+test/test_recruit_hometown.py
+test/test_recruiting_api.py
 test/test_season_type.py
 test/test_shot_info.py
 test/test_shot_info_location.py
