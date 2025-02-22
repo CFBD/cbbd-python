@@ -2,6 +2,7 @@
 
 # import apis into api package
 from cbbd.api.conferences_api import ConferencesApi
+from cbbd.api.draft_api import DraftApi
 from cbbd.api.games_api import GamesApi
 from cbbd.api.lines_api import LinesApi
 from cbbd.api.plays_api import PlaysApi

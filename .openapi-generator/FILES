@@ -7,6 +7,7 @@ README.md
 cbbd/__init__.py
 cbbd/api/__init__.py
 cbbd/api/conferences_api.py
+cbbd/api/draft_api.py
 cbbd/api/games_api.py
 cbbd/api/lines_api.py
 cbbd/api/plays_api.py
@@ -25,6 +26,9 @@ cbbd/models/adjusted_efficiency_info_rankings.py
 cbbd/models/conference_history.py
 cbbd/models/conference_history_teams_inner.py
 cbbd/models/conference_info.py
+cbbd/models/draft_pick.py
+cbbd/models/draft_position.py
+cbbd/models/draft_team.py
 cbbd/models/game_box_score_players.py
 cbbd/models/game_box_score_players_players_inner.py
 cbbd/models/game_box_score_team.py
@@ -69,6 +73,10 @@ docs/ConferenceHistory.md
 docs/ConferenceHistoryTeamsInner.md
 docs/ConferenceInfo.md
 docs/ConferencesApi.md
+docs/DraftApi.md
+docs/DraftPick.md
+docs/DraftPosition.md
+docs/DraftTeam.md
 docs/GameBoxScorePlayers.md
 docs/GameBoxScorePlayersPlayersInner.md
 docs/GameBoxScoreTeam.md
@@ -126,6 +134,10 @@ test/test_conference_history.py
 test/test_conference_history_teams_inner.py
 test/test_conference_info.py
 test/test_conferences_api.py
+test/test_draft_api.py
+test/test_draft_pick.py
+test/test_draft_position.py
+test/test_draft_team.py
 test/test_game_box_score_players.py
 test/test_game_box_score_players_players_inner.py
 test/test_game_box_score_team.py
