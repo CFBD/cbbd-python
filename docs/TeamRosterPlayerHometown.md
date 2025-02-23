@@ -4,6 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**county_fips** | **str** |  | 
+**longitude** | **float** |  | 
+**latitude** | **float** |  | 
 **country** | **str** |  | 
 **state** | **str** |  | 
 **city** | **str** |  | 
