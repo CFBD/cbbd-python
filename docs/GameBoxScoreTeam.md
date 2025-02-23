@@ -22,8 +22,8 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **game_minutes** | **float** |  | 
 **pace** | **float** |  | 
-**offense** | [**GameBoxScoreTeamStats**](GameBoxScoreTeamStats.md) |  | 
-**defense** | [**GameBoxScoreTeamStats**](GameBoxScoreTeamStats.md) |  | 
+**team_stats** | [**GameBoxScoreTeamStats**](GameBoxScoreTeamStats.md) |  | 
+**opponent_stats** | [**GameBoxScoreTeamStats**](GameBoxScoreTeamStats.md) |  | 
 
 ## Example
 

@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **losses** | **float** |  | 
 **total_minutes** | **float** |  | 
 **pace** | **float** |  | 
-**offense** | [**TeamSeasonUnitStats**](TeamSeasonUnitStats.md) |  | 
-**defense** | [**TeamSeasonUnitStats**](TeamSeasonUnitStats.md) |  | 
+**team_stats** | [**TeamSeasonUnitStats**](TeamSeasonUnitStats.md) |  | 
+**opponent_stats** | [**TeamSeasonUnitStats**](TeamSeasonUnitStats.md) |  | 
 
 ## Example
 
