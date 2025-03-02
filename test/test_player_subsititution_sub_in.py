@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.line_provider_info import LineProviderInfo  # noqa: E501
+from cbbd.models.player_subsititution_sub_in import PlayerSubsititutionSubIn  # noqa: E501
 
-class TestLineProviderInfo(unittest.TestCase):
-    """LineProviderInfo unit test stubs"""
+class TestPlayerSubsititutionSubIn(unittest.TestCase):
+    """PlayerSubsititutionSubIn unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,28 +27,32 @@ class TestLineProviderInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LineProviderInfo:
-        """Test LineProviderInfo
+    def make_instance(self, include_optional) -> PlayerSubsititutionSubIn:
+        """Test PlayerSubsititutionSubIn
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `LineProviderInfo`
+        # uncomment below to create an instance of `PlayerSubsititutionSubIn`
         """
-        model = LineProviderInfo()  # noqa: E501
+        model = PlayerSubsititutionSubIn()  # noqa: E501
         if include_optional:
-            return LineProviderInfo(
-                id = 56,
-                name = ''
+            return PlayerSubsititutionSubIn(
+                opponent_points = 56,
+                team_points = 56,
+                seconds_remaining = 56,
+                period = 56
             )
         else:
-            return LineProviderInfo(
-                id = 56,
-                name = '',
+            return PlayerSubsititutionSubIn(
+                opponent_points = 56,
+                team_points = 56,
+                seconds_remaining = 56,
+                period = 56,
         )
         """
 
-    def testLineProviderInfo(self):
-        """Test LineProviderInfo"""
+    def testPlayerSubsititutionSubIn(self):
+        """Test PlayerSubsititutionSubIn"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

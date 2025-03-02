@@ -97,6 +97,8 @@ Name | Type | Description  | Notes
 
 
 
+
+
 ### Example
 
 * Bearer Authentication (apiKey):
