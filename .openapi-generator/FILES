@@ -43,6 +43,7 @@ cbbd/models/game_media_info_broadcasts_inner.py
 cbbd/models/game_status.py
 cbbd/models/line_provider_info.py
 cbbd/models/play_info.py
+cbbd/models/play_info_on_floor_inner.py
 cbbd/models/play_info_participants_inner.py
 cbbd/models/play_type_info.py
 cbbd/models/player_season_stats.py
@@ -98,6 +99,7 @@ docs/GamesApi.md
 docs/LineProviderInfo.md
 docs/LinesApi.md
 docs/PlayInfo.md
+docs/PlayInfoOnFloorInner.md
 docs/PlayInfoParticipantsInner.md
 docs/PlayTypeInfo.md
 docs/PlayerSeasonStats.md
@@ -165,6 +167,7 @@ test/test_games_api.py
 test/test_line_provider_info.py
 test/test_lines_api.py
 test/test_play_info.py
+test/test_play_info_on_floor_inner.py
 test/test_play_info_participants_inner.py
 test/test_play_type_info.py
 test/test_player_season_stats.py

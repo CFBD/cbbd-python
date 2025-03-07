@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.srs_info import SrsInfo  # noqa: E501
+from cbbd.models.play_info_on_floor_inner import PlayInfoOnFloorInner  # noqa: E501
 
-class TestSrsInfo(unittest.TestCase):
-    """SrsInfo unit test stubs"""
+class TestPlayInfoOnFloorInner(unittest.TestCase):
+    """PlayInfoOnFloorInner unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,34 +27,30 @@ class TestSrsInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SrsInfo:
-        """Test SrsInfo
+    def make_instance(self, include_optional) -> PlayInfoOnFloorInner:
+        """Test PlayInfoOnFloorInner
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `SrsInfo`
+        # uncomment below to create an instance of `PlayInfoOnFloorInner`
         """
-        model = SrsInfo()  # noqa: E501
+        model = PlayInfoOnFloorInner()  # noqa: E501
         if include_optional:
-            return SrsInfo(
-                season = 56,
-                team_id = 56,
+            return PlayInfoOnFloorInner(
                 team = '',
-                conference = '',
-                rating = 1.337
+                name = '',
+                id = 56
             )
         else:
-            return SrsInfo(
-                season = 56,
-                team_id = 56,
+            return PlayInfoOnFloorInner(
                 team = '',
-                conference = '',
-                rating = 1.337,
+                name = '',
+                id = 56,
         )
         """
 
-    def testSrsInfo(self):
-        """Test SrsInfo"""
+    def testPlayInfoOnFloorInner(self):
+        """Test PlayInfoOnFloorInner"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

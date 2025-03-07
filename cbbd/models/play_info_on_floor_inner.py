@@ -22,16 +22,14 @@ import json
 
 from pydantic import BaseModel, Field, StrictInt, StrictStr
 
-class ConferenceInfo(BaseModel):
+class PlayInfoOnFloorInner(BaseModel):
     """
-    ConferenceInfo
+    PlayInfoOnFloorInner
     """
-    id: StrictInt = Field(...)
-    source_id: StrictStr = Field(default=..., alias="sourceId")
+    team: StrictStr = Field(...)
     name: StrictStr = Field(...)
-    abbreviation: StrictStr = Field(...)
-    short_name: StrictStr = Field(default=..., alias="shortName")
-    __properties = ["id", "sourceId", "name", "abbreviation", "shortName"]
+    id: StrictInt = Field(...)
+    __properties = ["team", "name", "id"]
 
     class Config:
         """Pydantic configuration"""
@@ -47,8 +45,8 @@ class ConferenceInfo(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ConferenceInfo:
-        """Create an instance of ConferenceInfo from a JSON string"""
+    def from_json(cls, json_str: str) -> PlayInfoOnFloorInner:
+        """Create an instance of PlayInfoOnFloorInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -60,20 +58,18 @@ class ConferenceInfo(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ConferenceInfo:
-        """Create an instance of ConferenceInfo from a dict"""
+    def from_dict(cls, obj: dict) -> PlayInfoOnFloorInner:
+        """Create an instance of PlayInfoOnFloorInner from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ConferenceInfo.parse_obj(obj)
+            return PlayInfoOnFloorInner.parse_obj(obj)
 
-        _obj = ConferenceInfo.parse_obj({
-            "id": obj.get("id"),
-            "source_id": obj.get("sourceId"),
+        _obj = PlayInfoOnFloorInner.parse_obj({
+            "team": obj.get("team"),
             "name": obj.get("name"),
-            "abbreviation": obj.get("abbreviation"),
-            "short_name": obj.get("shortName")
+            "id": obj.get("id")
         })
         return _obj
 
