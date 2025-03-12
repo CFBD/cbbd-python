@@ -5,7 +5,7 @@ All URIs are relative to *https://api.collegebasketballdata.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_lineup_stats_by_game**](LineupsApi.md#get_lineup_stats_by_game) | **GET** /lineups/game/{gameId} | 
-[**get_substitutions_by_game**](LineupsApi.md#get_substitutions_by_game) | **GET** /lineups/team | 
+[**get_lineups_by_team_season**](LineupsApi.md#get_lineups_by_team_season) | **GET** /lineups/team | 
 
 
 # **get_lineup_stats_by_game**
@@ -84,8 +84,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_substitutions_by_game**
-> List[LineupStats] get_substitutions_by_game(season, team, start_date_range=start_date_range, end_date_range=end_date_range)
+# **get_lineups_by_team_season**
+> List[LineupStats] get_lineups_by_team_season(season, team, start_date_range=start_date_range, end_date_range=end_date_range)
 
 
 
@@ -128,11 +128,11 @@ with cbbd.ApiClient(configuration) as api_client:
     end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end date range filter (optional)
 
     try:
-        api_response = api_instance.get_substitutions_by_game(season, team, start_date_range=start_date_range, end_date_range=end_date_range)
-        print("The response of LineupsApi->get_substitutions_by_game:\n")
+        api_response = api_instance.get_lineups_by_team_season(season, team, start_date_range=start_date_range, end_date_range=end_date_range)
+        print("The response of LineupsApi->get_lineups_by_team_season:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LineupsApi->get_substitutions_by_game: %s\n" % e)
+        print("Exception when calling LineupsApi->get_lineups_by_team_season: %s\n" % e)
 ```
 
 
