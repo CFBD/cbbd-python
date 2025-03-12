@@ -10,6 +10,7 @@ cbbd/api/conferences_api.py
 cbbd/api/draft_api.py
 cbbd/api/games_api.py
 cbbd/api/lines_api.py
+cbbd/api/lineups_api.py
 cbbd/api/plays_api.py
 cbbd/api/rankings_api.py
 cbbd/api/ratings_api.py
@@ -42,6 +43,10 @@ cbbd/models/game_media_info.py
 cbbd/models/game_media_info_broadcasts_inner.py
 cbbd/models/game_status.py
 cbbd/models/line_provider_info.py
+cbbd/models/lineup_stats.py
+cbbd/models/lineup_unit_stats.py
+cbbd/models/lineup_unit_stats_four_factors.py
+cbbd/models/lineup_unit_stats_two_pointers.py
 cbbd/models/play_info.py
 cbbd/models/play_info_on_floor_inner.py
 cbbd/models/play_info_participants_inner.py
@@ -55,6 +60,7 @@ cbbd/models/recruit.py
 cbbd/models/recruit_committed_to.py
 cbbd/models/recruit_hometown.py
 cbbd/models/season_type.py
+cbbd/models/shooting_stats.py
 cbbd/models/shot_info.py
 cbbd/models/shot_info_location.py
 cbbd/models/shot_info_shooter.py
@@ -98,6 +104,11 @@ docs/GameStatus.md
 docs/GamesApi.md
 docs/LineProviderInfo.md
 docs/LinesApi.md
+docs/LineupStats.md
+docs/LineupUnitStats.md
+docs/LineupUnitStatsFourFactors.md
+docs/LineupUnitStatsTwoPointers.md
+docs/LineupsApi.md
 docs/PlayInfo.md
 docs/PlayInfoOnFloorInner.md
 docs/PlayInfoParticipantsInner.md
@@ -115,6 +126,7 @@ docs/RecruitCommittedTo.md
 docs/RecruitHometown.md
 docs/RecruitingApi.md
 docs/SeasonType.md
+docs/ShootingStats.md
 docs/ShotInfo.md
 docs/ShotInfoLocation.md
 docs/ShotInfoShooter.md
@@ -166,6 +178,11 @@ test/test_game_status.py
 test/test_games_api.py
 test/test_line_provider_info.py
 test/test_lines_api.py
+test/test_lineup_stats.py
+test/test_lineup_unit_stats.py
+test/test_lineup_unit_stats_four_factors.py
+test/test_lineup_unit_stats_two_pointers.py
+test/test_lineups_api.py
 test/test_play_info.py
 test/test_play_info_on_floor_inner.py
 test/test_play_info_participants_inner.py
@@ -183,6 +200,7 @@ test/test_recruit_committed_to.py
 test/test_recruit_hometown.py
 test/test_recruiting_api.py
 test/test_season_type.py
+test/test_shooting_stats.py
 test/test_shot_info.py
 test/test_shot_info_location.py
 test/test_shot_info_shooter.py

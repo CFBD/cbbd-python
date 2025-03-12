@@ -5,6 +5,7 @@ from cbbd.api.conferences_api import ConferencesApi
 from cbbd.api.draft_api import DraftApi
 from cbbd.api.games_api import GamesApi
 from cbbd.api.lines_api import LinesApi
+from cbbd.api.lineups_api import LineupsApi
 from cbbd.api.plays_api import PlaysApi
 from cbbd.api.rankings_api import RankingsApi
 from cbbd.api.ratings_api import RatingsApi
