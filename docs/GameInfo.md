@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **neutral_site** | **bool** |  | 
 **conference_game** | **bool** |  | 
 **game_type** | **str** |  | 
+**game_notes** | **str** |  | 
 **status** | [**GameStatus**](GameStatus.md) |  | 
 **attendance** | **int** |  | 
 **home_team_id** | **int** |  | 
