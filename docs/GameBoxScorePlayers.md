@@ -8,14 +8,17 @@ Name | Type | Description | Notes
 **season** | **int** |  | 
 **season_label** | **str** |  | 
 **season_type** | [**SeasonType**](SeasonType.md) |  | 
+**tournament** | **str** |  | 
 **start_date** | **datetime** |  | 
 **start_time_tbd** | **bool** |  | 
 **team_id** | **int** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
+**team_seed** | **int** |  | 
 **opponent_id** | **int** |  | 
 **opponent** | **str** |  | 
 **opponent_conference** | **str** |  | 
+**opponent_seed** | **int** |  | 
 **neutral_site** | **bool** |  | 
 **conference_game** | **bool** |  | 
 **game_type** | **str** |  | 

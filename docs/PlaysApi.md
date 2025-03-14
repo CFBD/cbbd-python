@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_plays_by_date**](PlaysApi.md#get_plays_by_date) | **GET** /plays/date | 
 [**get_plays_by_player_id**](PlaysApi.md#get_plays_by_player_id) | **GET** /plays/player/{playerId} | 
 [**get_plays_by_team**](PlaysApi.md#get_plays_by_team) | **GET** /plays/team | 
+[**get_plays_by_tournament**](PlaysApi.md#get_plays_by_tournament) | **GET** /plays/tournament | 
 [**get_substitutions_by_game**](PlaysApi.md#get_substitutions_by_game) | **GET** /substitutions/game/{gameId} | 
 [**get_substitutions_by_player_id**](PlaysApi.md#get_substitutions_by_player_id) | **GET** /substitutions/player/{playerId} | 
 [**get_substitutions_by_team**](PlaysApi.md#get_substitutions_by_team) | **GET** /substitutions/team | 
@@ -380,6 +381,86 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **season** | **int**| Required season filter | 
  **team** | **str**| Required team filter | 
+ **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+
+### Return type
+
+[**List[PlayInfo]**](PlayInfo.md)
+
+### Authorization
+
+[apiKey](../README.md#apiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Ok |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_plays_by_tournament**
+> List[PlayInfo] get_plays_by_tournament(tournament, season, shooting_plays_only=shooting_plays_only)
+
+
+
+Retrieve all plays for a given tournament and season
+
+### Example
+
+* Bearer Authentication (apiKey):
+```python
+import time
+import os
+import cbbd
+from cbbd.models.play_info import PlayInfo
+from cbbd.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.collegebasketballdata.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cbbd.Configuration(
+    host = "https://api.collegebasketballdata.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: apiKey
+configuration = cbbd.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cbbd.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cbbd.PlaysApi(api_client)
+    tournament = 'tournament_example' # str | Required tournament filter (e.g. NCAA, NIT, etc)
+    season = 3.4 # float | Required season filter
+    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+
+    try:
+        api_response = api_instance.get_plays_by_tournament(tournament, season, shooting_plays_only=shooting_plays_only)
+        print("The response of PlaysApi->get_plays_by_tournament:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling PlaysApi->get_plays_by_tournament: %s\n" % e)
+```
+
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **tournament** | **str**| Required tournament filter (e.g. NCAA, NIT, etc) | 
+ **season** | **float**| Required season filter | 
  **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
 
 ### Return type

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **season** | **int** |  | 
 **season_label** | **str** |  | 
 **season_type** | [**SeasonType**](SeasonType.md) |  | 
+**tournament** | **str** |  | 
 **start_date** | **datetime** |  | 
 **start_time_tbd** | **bool** |  | 
 **home_team_id** | **int** |  | 

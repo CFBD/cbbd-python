@@ -12,14 +12,17 @@ Name | Type | Description | Notes
 **season** | **float** |  | 
 **season_type** | [**SeasonType**](SeasonType.md) |  | 
 **game_type** | **str** |  | 
+**tournament** | **str** |  | 
 **play_type** | **str** |  | 
 **is_home_team** | **bool** |  | 
 **team_id** | **int** |  | 
 **team** | **str** |  | 
 **conference** | **str** |  | 
+**team_seed** | **float** |  | 
 **opponent_id** | **int** |  | 
 **opponent** | **str** |  | 
 **opponent_conference** | **str** |  | 
+**opponent_seed** | **float** |  | 
 **period** | **int** |  | 
 **clock** | **str** |  | 
 **seconds_remaining** | **int** |  | 

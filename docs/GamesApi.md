@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **get_broadcasts**
-> List[GameMediaInfo] get_broadcasts(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+> List[GameMediaInfo] get_broadcasts(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
 
 
 
@@ -55,9 +55,10 @@ with cbbd.ApiClient(configuration) as api_client:
     conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
     season = 3.4 # float | Optional season filter (optional)
     season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
 
     try:
-        api_response = api_instance.get_broadcasts(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+        api_response = api_instance.get_broadcasts(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
         print("The response of GamesApi->get_broadcasts:\n")
         pprint(api_response)
     except Exception as e:
@@ -76,6 +77,7 @@ Name | Type | Description  | Notes
  **conference** | **str**| Optional conference abbreviation filter | [optional] 
  **season** | **float**| Optional season filter | [optional] 
  **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
 
 ### Return type
 
@@ -98,7 +100,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_players**
-> List[GameBoxScorePlayers] get_game_players(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+> List[GameBoxScorePlayers] get_game_players(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
 
 
 
@@ -142,9 +144,10 @@ with cbbd.ApiClient(configuration) as api_client:
     conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
     season = 3.4 # float | Optional season filter (optional)
     season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
 
     try:
-        api_response = api_instance.get_game_players(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+        api_response = api_instance.get_game_players(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
         print("The response of GamesApi->get_game_players:\n")
         pprint(api_response)
     except Exception as e:
@@ -163,6 +166,7 @@ Name | Type | Description  | Notes
  **conference** | **str**| Optional conference abbreviation filter | [optional] 
  **season** | **float**| Optional season filter | [optional] 
  **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
 
 ### Return type
 
@@ -185,7 +189,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_game_teams**
-> List[GameBoxScoreTeam] get_game_teams(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+> List[GameBoxScoreTeam] get_game_teams(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
 
 
 
@@ -229,9 +233,10 @@ with cbbd.ApiClient(configuration) as api_client:
     conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
     season = 3.4 # float | Optional season filter (optional)
     season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
+    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
 
     try:
-        api_response = api_instance.get_game_teams(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type)
+        api_response = api_instance.get_game_teams(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
         print("The response of GamesApi->get_game_teams:\n")
         pprint(api_response)
     except Exception as e:
@@ -250,6 +255,7 @@ Name | Type | Description  | Notes
  **conference** | **str**| Optional conference abbreviation filter | [optional] 
  **season** | **float**| Optional season filter | [optional] 
  **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
+ **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
 
 ### Return type
 
@@ -272,7 +278,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_games**
-> List[GameInfo] get_games(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, status=status)
+> List[GameInfo] get_games(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, status=status, tournament=tournament)
 
 
 
@@ -318,9 +324,10 @@ with cbbd.ApiClient(configuration) as api_client:
     season = 56 # int | Optional season filter (optional)
     season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
     status = cbbd.GameStatus() # GameStatus | Optional game status filter (optional)
+    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
 
     try:
-        api_response = api_instance.get_games(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, status=status)
+        api_response = api_instance.get_games(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, status=status, tournament=tournament)
         print("The response of GamesApi->get_games:\n")
         pprint(api_response)
     except Exception as e:
@@ -340,6 +347,7 @@ Name | Type | Description  | Notes
  **season** | **int**| Optional season filter | [optional] 
  **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
  **status** | [**GameStatus**](.md)| Optional game status filter | [optional] 
+ **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
 
 ### Return type
 

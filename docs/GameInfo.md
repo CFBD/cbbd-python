@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **neutral_site** | **bool** |  | 
 **conference_game** | **bool** |  | 
 **game_type** | **str** |  | 
+**tournament** | **str** |  | 
 **game_notes** | **str** |  | 
 **status** | [**GameStatus**](GameStatus.md) |  | 
 **attendance** | **int** |  | 
@@ -21,6 +22,7 @@ Name | Type | Description | Notes
 **home_team** | **str** |  | 
 **home_conference_id** | **int** |  | 
 **home_conference** | **str** |  | 
+**home_seed** | **int** |  | 
 **home_points** | **int** |  | 
 **home_period_points** | **List[int]** |  | 
 **home_winner** | **bool** |  | 
@@ -28,6 +30,7 @@ Name | Type | Description | Notes
 **away_team** | **str** |  | 
 **away_conference_id** | **int** |  | 
 **away_conference** | **str** |  | 
+**away_seed** | **int** |  | 
 **away_points** | **int** |  | 
 **away_period_points** | **List[int]** |  | 
 **away_winner** | **bool** |  | 
