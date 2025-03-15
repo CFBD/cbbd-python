@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **opponent_conference** | **str** |  | 
 **opponent_seed** | **int** |  | 
 **neutral_site** | **bool** |  | 
+**is_home** | **bool** |  | 
 **conference_game** | **bool** |  | 
 **game_type** | **str** |  | 
 **notes** | **str** |  | 
