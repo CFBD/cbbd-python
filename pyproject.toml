@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cbbd"
-version = "1.19.2"
+version = "1.20.0"
 description = "College Basketball Data API"
 authors = ["the developer <admin@collegefootballdata.com>"]
 license = "MIT"
