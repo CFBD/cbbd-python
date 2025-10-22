@@ -10,11 +10,13 @@ Name | Type | Description | Notes
 **conference** | **str** |  | 
 **tracked_shots** | **int** |  | 
 **assisted_pct** | **float** |  | 
+**free_throw_rate** | **float** |  | 
 **dunks** | [**SeasonShootingStatsDunks**](SeasonShootingStatsDunks.md) |  | 
 **layups** | [**SeasonShootingStatsDunks**](SeasonShootingStatsDunks.md) |  | 
 **tip_ins** | [**ShotTypeBreakdown**](ShotTypeBreakdown.md) |  | 
 **two_point_jumpers** | [**SeasonShootingStatsDunks**](SeasonShootingStatsDunks.md) |  | 
 **three_point_jumpers** | [**SeasonShootingStatsDunks**](SeasonShootingStatsDunks.md) |  | 
+**free_throws** | [**ShotTypeBreakdown**](ShotTypeBreakdown.md) |  | 
 **attempts_breakdown** | [**SeasonShootingStatsAttemptsBreakdown**](SeasonShootingStatsAttemptsBreakdown.md) |  | 
 
 ## Example

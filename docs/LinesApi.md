@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 
 
-
+Returns a list of available line providers
 
 ### Example
 
