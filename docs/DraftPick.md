@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **name** | **str** |  | 
 **overall_rank** | **int** |  | 
 **position_rank** | **int** |  | 
-**height** | **int** |  | 
+**height** | **float** |  | 
 **weight** | **int** |  | 
 
 ## Example

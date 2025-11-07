@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **athlete_id** | **int** |  | 
 **year** | **int** |  | 
 **name** | **str** |  | 
-**height_inches** | **int** |  | 
+**height_inches** | **float** |  | 
 **weight_pounds** | **int** |  | 
 **stars** | **int** |  | 
 **rating** | **float** |  | 
