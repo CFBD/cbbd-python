@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_plays_by_date**
-> List[PlayInfo] get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only)
+> List[PlayInfo] get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only, utc_offset=utc_offset)
 
 
 
@@ -205,9 +205,10 @@ with cbbd.ApiClient(configuration) as api_client:
     api_instance = cbbd.PlaysApi(api_client)
     var_date = '2013-10-20T19:20:30+01:00' # datetime | Required date filter in ISO 8601 format (YYYY-MM-DD)
     shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+    utc_offset = 3.4 # float | Optional UTC offset in hours to adjust the date range (optional)
 
     try:
-        api_response = api_instance.get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only)
+        api_response = api_instance.get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only, utc_offset=utc_offset)
         print("The response of PlaysApi->get_plays_by_date:\n")
         pprint(api_response)
     except Exception as e:
@@ -222,6 +223,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **var_date** | **datetime**| Required date filter in ISO 8601 format (YYYY-MM-DD) | 
  **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+ **utc_offset** | **float**| Optional UTC offset in hours to adjust the date range | [optional] 
 
 ### Return type
 
