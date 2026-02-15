@@ -16,10 +16,10 @@
 import unittest
 import datetime
 
-from cbbd.models.play_type_info import PlayTypeInfo  # noqa: E501
+from cbbd.models.team_elo import TeamElo  # noqa: E501
 
-class TestPlayTypeInfo(unittest.TestCase):
-    """PlayTypeInfo unit test stubs"""
+class TestTeamElo(unittest.TestCase):
+    """TeamElo unit test stubs"""
 
     def setUp(self):
         pass
@@ -27,28 +27,34 @@ class TestPlayTypeInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PlayTypeInfo:
-        """Test PlayTypeInfo
+    def make_instance(self, include_optional) -> TeamElo:
+        """Test TeamElo
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `PlayTypeInfo`
+        # uncomment below to create an instance of `TeamElo`
         """
-        model = PlayTypeInfo()  # noqa: E501
+        model = TeamElo()  # noqa: E501
         if include_optional:
-            return PlayTypeInfo(
-                id = 56,
-                name = ''
+            return TeamElo(
+                season = 56,
+                team_id = 56,
+                team = '',
+                conference = '',
+                elo = 56
             )
         else:
-            return PlayTypeInfo(
-                id = 56,
-                name = '',
+            return TeamElo(
+                season = 56,
+                team_id = 56,
+                team = '',
+                conference = '',
+                elo = 56,
         )
         """
 
-    def testPlayTypeInfo(self):
-        """Test PlayTypeInfo"""
+    def testTeamElo(self):
+        """Test TeamElo"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

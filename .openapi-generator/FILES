@@ -70,6 +70,7 @@ cbbd/models/shot_info_location.py
 cbbd/models/shot_info_shooter.py
 cbbd/models/shot_type_breakdown.py
 cbbd/models/srs_info.py
+cbbd/models/team_elo.py
 cbbd/models/team_info.py
 cbbd/models/team_roster.py
 cbbd/models/team_roster_player.py
@@ -142,6 +143,7 @@ docs/ShotInfoShooter.md
 docs/ShotTypeBreakdown.md
 docs/SrsInfo.md
 docs/StatsApi.md
+docs/TeamElo.md
 docs/TeamInfo.md
 docs/TeamRoster.md
 docs/TeamRosterPlayer.md
@@ -221,6 +223,7 @@ test/test_shot_info_shooter.py
 test/test_shot_type_breakdown.py
 test/test_srs_info.py
 test/test_stats_api.py
+test/test_team_elo.py
 test/test_team_info.py
 test/test_team_roster.py
 test/test_team_roster_player.py

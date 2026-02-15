@@ -19,17 +19,19 @@ import re  # noqa: F401
 import json
 
 
-from typing import Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from typing import Optional
+from pydantic import BaseModel, Field, StrictInt, StrictStr
 
-class ShootingStats(BaseModel):
+class TeamElo(BaseModel):
     """
-    ShootingStats
+    TeamElo
     """
-    made: StrictInt = Field(...)
-    attempted: StrictInt = Field(...)
-    pct: Union[StrictFloat, StrictInt] = Field(...)
-    __properties = ["made", "attempted", "pct"]
+    season: StrictInt = Field(...)
+    team_id: StrictInt = Field(default=..., alias="teamId")
+    team: StrictStr = Field(...)
+    conference: StrictStr = Field(...)
+    elo: Optional[StrictInt] = Field(...)
+    __properties = ["season", "teamId", "team", "conference", "elo"]
 
     class Config:
         """Pydantic configuration"""
@@ -45,8 +47,8 @@ class ShootingStats(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> ShootingStats:
-        """Create an instance of ShootingStats from a JSON string"""
+    def from_json(cls, json_str: str) -> TeamElo:
+        """Create an instance of TeamElo from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -55,21 +57,28 @@ class ShootingStats(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # set to None if elo (nullable) is None
+        # and __fields_set__ contains the field
+        if self.elo is None and "elo" in self.__fields_set__:
+            _dict['elo'] = None
+
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> ShootingStats:
-        """Create an instance of ShootingStats from a dict"""
+    def from_dict(cls, obj: dict) -> TeamElo:
+        """Create an instance of TeamElo from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return ShootingStats.parse_obj(obj)
+            return TeamElo.parse_obj(obj)
 
-        _obj = ShootingStats.parse_obj({
-            "made": obj.get("made"),
-            "attempted": obj.get("attempted"),
-            "pct": obj.get("pct")
+        _obj = TeamElo.parse_obj({
+            "season": obj.get("season"),
+            "team_id": obj.get("teamId"),
+            "team": obj.get("team"),
+            "conference": obj.get("conference"),
+            "elo": obj.get("elo")
         })
         return _obj
 

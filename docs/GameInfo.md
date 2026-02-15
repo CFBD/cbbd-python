@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **home_points** | **int** |  | 
 **home_period_points** | **List[int]** |  | 
 **home_winner** | **bool** |  | 
+**home_team_elo_start** | **int** |  | 
+**home_team_elo_end** | **int** |  | 
 **away_team_id** | **int** |  | 
 **away_team** | **str** |  | 
 **away_conference_id** | **int** |  | 
@@ -34,6 +36,8 @@ Name | Type | Description | Notes
 **away_points** | **int** |  | 
 **away_period_points** | **List[int]** |  | 
 **away_winner** | **bool** |  | 
+**away_team_elo_start** | **int** |  | 
+**away_team_elo_end** | **int** |  | 
 **excitement** | **float** |  | 
 **venue_id** | **int** |  | 
 **venue** | **str** |  | 
