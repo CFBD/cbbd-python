@@ -20,15 +20,19 @@ import json
 
 
 from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt
+from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 
-class TeamSeasonUnitStatsTurnovers(BaseModel):
+class TeamRecruitingRanking(BaseModel):
     """
-    TeamSeasonUnitStatsTurnovers
+    TeamRecruitingRanking
     """
-    team_total: Optional[Union[StrictFloat, StrictInt]] = Field(default=..., alias="teamTotal")
-    total: Optional[Union[StrictFloat, StrictInt]] = Field(...)
-    __properties = ["teamTotal", "total"]
+    team_id: StrictInt = Field(default=..., alias="teamId")
+    team: StrictStr = Field(...)
+    conference: Optional[StrictStr] = Field(...)
+    year: StrictInt = Field(...)
+    ranking: StrictInt = Field(...)
+    rating: Union[StrictFloat, StrictInt] = Field(...)
+    __properties = ["teamId", "team", "conference", "year", "ranking", "rating"]
 
     class Config:
         """Pydantic configuration"""
@@ -44,8 +48,8 @@ class TeamSeasonUnitStatsTurnovers(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> TeamSeasonUnitStatsTurnovers:
-        """Create an instance of TeamSeasonUnitStatsTurnovers from a JSON string"""
+    def from_json(cls, json_str: str) -> TeamRecruitingRanking:
+        """Create an instance of TeamRecruitingRanking from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -54,30 +58,29 @@ class TeamSeasonUnitStatsTurnovers(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # set to None if team_total (nullable) is None
+        # set to None if conference (nullable) is None
         # and __fields_set__ contains the field
-        if self.team_total is None and "team_total" in self.__fields_set__:
-            _dict['teamTotal'] = None
-
-        # set to None if total (nullable) is None
-        # and __fields_set__ contains the field
-        if self.total is None and "total" in self.__fields_set__:
-            _dict['total'] = None
+        if self.conference is None and "conference" in self.__fields_set__:
+            _dict['conference'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> TeamSeasonUnitStatsTurnovers:
-        """Create an instance of TeamSeasonUnitStatsTurnovers from a dict"""
+    def from_dict(cls, obj: dict) -> TeamRecruitingRanking:
+        """Create an instance of TeamRecruitingRanking from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return TeamSeasonUnitStatsTurnovers.parse_obj(obj)
+            return TeamRecruitingRanking.parse_obj(obj)
 
-        _obj = TeamSeasonUnitStatsTurnovers.parse_obj({
-            "team_total": obj.get("teamTotal"),
-            "total": obj.get("total")
+        _obj = TeamRecruitingRanking.parse_obj({
+            "team_id": obj.get("teamId"),
+            "team": obj.get("team"),
+            "conference": obj.get("conference"),
+            "year": obj.get("year"),
+            "ranking": obj.get("ranking"),
+            "rating": obj.get("rating")
         })
         return _obj
 
