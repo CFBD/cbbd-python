@@ -60,6 +60,9 @@ cbbd/models/poll_team_info.py
 cbbd/models/recruit.py
 cbbd/models/recruit_committed_to.py
 cbbd/models/recruit_hometown.py
+cbbd/models/scoreboard_game.py
+cbbd/models/scoreboard_game_betting.py
+cbbd/models/scoreboard_game_home_team.py
 cbbd/models/season_shooting_stats.py
 cbbd/models/season_shooting_stats_attempts_breakdown.py
 cbbd/models/season_shooting_stats_dunks.py
@@ -133,6 +136,9 @@ docs/Recruit.md
 docs/RecruitCommittedTo.md
 docs/RecruitHometown.md
 docs/RecruitingApi.md
+docs/ScoreboardGame.md
+docs/ScoreboardGameBetting.md
+docs/ScoreboardGameHomeTeam.md
 docs/SeasonShootingStats.md
 docs/SeasonShootingStatsAttemptsBreakdown.md
 docs/SeasonShootingStatsDunks.md
@@ -214,6 +220,9 @@ test/test_recruit.py
 test/test_recruit_committed_to.py
 test/test_recruit_hometown.py
 test/test_recruiting_api.py
+test/test_scoreboard_game.py
+test/test_scoreboard_game_betting.py
+test/test_scoreboard_game_home_team.py
 test/test_season_shooting_stats.py
 test/test_season_shooting_stats_attempts_breakdown.py
 test/test_season_shooting_stats_dunks.py
