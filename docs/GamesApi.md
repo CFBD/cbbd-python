@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves live scoreboard data
+Retrieves live scoreboard data (requires a Patreon Tier 1 subscription or higher)
 
 ### Example
 
