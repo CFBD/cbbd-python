@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns premium team leaderboard statistics by season, team, or conference (requires a Patreon Tier 3 subscription or higher)
+Returns premium team leaderboard statistics by season, team, or conference (requires a Patreon Tier 2 subscription or higher)
 
 ### Example
 
