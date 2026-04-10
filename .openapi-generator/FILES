@@ -106,6 +106,9 @@ cbbd/models/team_stats_leaderboard_unit_stats_fouls.py
 cbbd/models/team_stats_leaderboard_unit_stats_points.py
 cbbd/models/team_stats_leaderboard_unit_stats_rebounds.py
 cbbd/models/team_stats_leaderboard_unit_stats_turnovers.py
+cbbd/models/transfer.py
+cbbd/models/transfer_eligibility.py
+cbbd/models/transfer_origin.py
 cbbd/models/venue_info.py
 cbbd/py.typed
 cbbd/rest.py
@@ -203,6 +206,9 @@ docs/TeamStatsLeaderboardUnitStatsPoints.md
 docs/TeamStatsLeaderboardUnitStatsRebounds.md
 docs/TeamStatsLeaderboardUnitStatsTurnovers.md
 docs/TeamsApi.md
+docs/Transfer.md
+docs/TransferEligibility.md
+docs/TransferOrigin.md
 docs/VenueInfo.md
 docs/VenuesApi.md
 git_push.sh
@@ -306,6 +312,9 @@ test/test_team_stats_leaderboard_unit_stats_points.py
 test/test_team_stats_leaderboard_unit_stats_rebounds.py
 test/test_team_stats_leaderboard_unit_stats_turnovers.py
 test/test_teams_api.py
+test/test_transfer.py
+test/test_transfer_eligibility.py
+test/test_transfer_origin.py
 test/test_venue_info.py
 test/test_venues_api.py
 tox.ini
