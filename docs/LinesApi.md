@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 
-Returns betting lines for the first 3000 games that match the provided filters, ordered by start date.
+Returns betting lines for up to 3,000 games that match the filters, ordered by start date.
 
 ### Example
 
@@ -46,11 +46,11 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.LinesApi(api_client)
-    season = 56 # int | Optional season filter (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start timestamp in ISO 8601 format (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end timestamp in ISO 8601 format (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_lines(season=season, team=team, conference=conference, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -66,11 +66,11 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Optional season filter | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **start_date_range** | **datetime**| Optional start timestamp in ISO 8601 format | [optional] 
- **end_date_range** | **datetime**| Optional end timestamp in ISO 8601 format | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns a list of available line providers
+Returns available betting line providers.
 
 ### Example
 

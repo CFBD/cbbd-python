@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -44,7 +44,7 @@ setup(
     license="MIT",
     long_description_content_type='text/markdown',
     long_description="""\
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
     """,  # noqa: E501
     package_data={"cbbd": ["py.typed"]},
 )

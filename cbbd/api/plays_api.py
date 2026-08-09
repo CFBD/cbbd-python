@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -54,7 +54,7 @@ class PlaysApi:
     def get_play_types(self, **kwargs) -> List[PlayTypeInfo]:  # noqa: E501
         """get_play_types  # noqa: E501
 
-        Retrieve list of play types  # noqa: E501
+        Returns available play types and their identifiers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -82,7 +82,7 @@ class PlaysApi:
     def get_play_types_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_play_types  # noqa: E501
 
-        Retrieve list of play types  # noqa: E501
+        Returns available play types and their identifiers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -183,19 +183,19 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_plays(self, game_id : Annotated[StrictInt, Field(..., description="Game id filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
+    def get_plays(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
         """get_plays  # noqa: E501
 
-        Returns all plays for a given game  # noqa: E501
+        Returns all recorded plays for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays(game_id, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -215,19 +215,19 @@ class PlaysApi:
         return self.get_plays_with_http_info(game_id, shooting_plays_only, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_plays_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="Game id filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_plays_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_plays  # noqa: E501
 
-        Returns all plays for a given game  # noqa: E501
+        Returns all recorded plays for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_with_http_info(game_id, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -331,21 +331,21 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_plays_by_date(self, var_date : Annotated[datetime, Field(..., description="Required date filter in ISO 8601 format (YYYY-MM-DD)")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, utc_offset : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional UTC offset in hours to adjust the date range")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
+    def get_plays_by_date(self, var_date : Annotated[datetime, Field(..., description="The date to return in ISO 8601 format (YYYY-MM-DD).")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, utc_offset : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Shifts the date range by this number of hours from UTC.")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
         """get_plays_by_date  # noqa: E501
 
-        Retrieve all plays for a given UTC date  # noqa: E501
+        Returns all recorded plays for a UTC date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_date(var_date, shooting_plays_only, utc_offset, async_req=True)
         >>> result = thread.get()
 
-        :param var_date: Required date filter in ISO 8601 format (YYYY-MM-DD) (required)
+        :param var_date: The date to return in ISO 8601 format (YYYY-MM-DD). (required)
         :type var_date: datetime
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
-        :param utc_offset: Optional UTC offset in hours to adjust the date range
+        :param utc_offset: Shifts the date range by this number of hours from UTC.
         :type utc_offset: float
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -365,21 +365,21 @@ class PlaysApi:
         return self.get_plays_by_date_with_http_info(var_date, shooting_plays_only, utc_offset, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_plays_by_date_with_http_info(self, var_date : Annotated[datetime, Field(..., description="Required date filter in ISO 8601 format (YYYY-MM-DD)")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, utc_offset : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional UTC offset in hours to adjust the date range")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_plays_by_date_with_http_info(self, var_date : Annotated[datetime, Field(..., description="The date to return in ISO 8601 format (YYYY-MM-DD).")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, utc_offset : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Shifts the date range by this number of hours from UTC.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_plays_by_date  # noqa: E501
 
-        Retrieve all plays for a given UTC date  # noqa: E501
+        Returns all recorded plays for a UTC date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_date_with_http_info(var_date, shooting_plays_only, utc_offset, async_req=True)
         >>> result = thread.get()
 
-        :param var_date: Required date filter in ISO 8601 format (YYYY-MM-DD) (required)
+        :param var_date: The date to return in ISO 8601 format (YYYY-MM-DD). (required)
         :type var_date: datetime
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
-        :param utc_offset: Optional UTC offset in hours to adjust the date range
+        :param utc_offset: Shifts the date range by this number of hours from UTC.
         :type utc_offset: float
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -490,21 +490,21 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_plays_by_player_id(self, player_id : Annotated[StrictInt, Field(..., description="Required player id filter")], season : Annotated[StrictInt, Field(..., description="Required season filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
+    def get_plays_by_player_id(self, player_id : Annotated[StrictInt, Field(..., description="The player ID.")], season : Annotated[StrictInt, Field(..., description="The season to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
         """get_plays_by_player_id  # noqa: E501
 
-        Retrieve all plays for a given player and season  # noqa: E501
+        Returns all recorded plays for a player and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_player_id(player_id, season, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param player_id: Required player id filter (required)
+        :param player_id: The player ID. (required)
         :type player_id: int
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -524,21 +524,21 @@ class PlaysApi:
         return self.get_plays_by_player_id_with_http_info(player_id, season, shooting_plays_only, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_plays_by_player_id_with_http_info(self, player_id : Annotated[StrictInt, Field(..., description="Required player id filter")], season : Annotated[StrictInt, Field(..., description="Required season filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_plays_by_player_id_with_http_info(self, player_id : Annotated[StrictInt, Field(..., description="The player ID.")], season : Annotated[StrictInt, Field(..., description="The season to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_plays_by_player_id  # noqa: E501
 
-        Retrieve all plays for a given player and season  # noqa: E501
+        Returns all recorded plays for a player and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_player_id_with_http_info(player_id, season, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param player_id: Required player id filter (required)
+        :param player_id: The player ID. (required)
         :type player_id: int
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -646,21 +646,21 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_plays_by_team(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
+    def get_plays_by_team(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
         """get_plays_by_team  # noqa: E501
 
-        Retrieve all plays for a given team and season  # noqa: E501
+        Returns all recorded plays for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_team(season, team, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -680,21 +680,21 @@ class PlaysApi:
         return self.get_plays_by_team_with_http_info(season, team, shooting_plays_only, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_plays_by_team_with_http_info(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_plays_by_team_with_http_info(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_plays_by_team  # noqa: E501
 
-        Retrieve all plays for a given team and season  # noqa: E501
+        Returns all recorded plays for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_team_with_http_info(season, team, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -802,21 +802,21 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_plays_by_tournament(self, tournament : Annotated[StrictStr, Field(..., description="Required tournament filter (e.g. NCAA, NIT, etc)")], season : Annotated[Union[StrictFloat, StrictInt], Field(..., description="Required season filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
+    def get_plays_by_tournament(self, tournament : Annotated[StrictStr, Field(..., description="The tournament to return, such as NCAA or NIT.")], season : Annotated[Union[StrictFloat, StrictInt], Field(..., description="The season to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> List[PlayInfo]:  # noqa: E501
         """get_plays_by_tournament  # noqa: E501
 
-        Retrieve all plays for a given tournament and season  # noqa: E501
+        Returns all recorded plays for a tournament and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_tournament(tournament, season, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param tournament: Required tournament filter (e.g. NCAA, NIT, etc) (required)
+        :param tournament: The tournament to return, such as NCAA or NIT. (required)
         :type tournament: str
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: float
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -836,21 +836,21 @@ class PlaysApi:
         return self.get_plays_by_tournament_with_http_info(tournament, season, shooting_plays_only, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_plays_by_tournament_with_http_info(self, tournament : Annotated[StrictStr, Field(..., description="Required tournament filter (e.g. NCAA, NIT, etc)")], season : Annotated[Union[StrictFloat, StrictInt], Field(..., description="Required season filter")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="Optional filter to only return shooting plays")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_plays_by_tournament_with_http_info(self, tournament : Annotated[StrictStr, Field(..., description="The tournament to return, such as NCAA or NIT.")], season : Annotated[Union[StrictFloat, StrictInt], Field(..., description="The season to return.")], shooting_plays_only : Annotated[Optional[StrictBool], Field(description="When true, returns only shooting plays.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_plays_by_tournament  # noqa: E501
 
-        Retrieve all plays for a given tournament and season  # noqa: E501
+        Returns all recorded plays for a tournament and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_plays_by_tournament_with_http_info(tournament, season, shooting_plays_only, async_req=True)
         >>> result = thread.get()
 
-        :param tournament: Required tournament filter (e.g. NCAA, NIT, etc) (required)
+        :param tournament: The tournament to return, such as NCAA or NIT. (required)
         :type tournament: str
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: float
-        :param shooting_plays_only: Optional filter to only return shooting plays
+        :param shooting_plays_only: When true, returns only shooting plays.
         :type shooting_plays_only: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -958,17 +958,17 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_substitutions_by_game(self, game_id : Annotated[StrictInt, Field(..., description="Game id filter")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
+    def get_substitutions_by_game(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
         """get_substitutions_by_game  # noqa: E501
 
-        Returns all player substitutions for a given game  # noqa: E501
+        Returns all recorded player substitutions for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_game(game_id, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -988,17 +988,17 @@ class PlaysApi:
         return self.get_substitutions_by_game_with_http_info(game_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_substitutions_by_game_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="Game id filter")], **kwargs) -> ApiResponse:  # noqa: E501
+    def get_substitutions_by_game_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], **kwargs) -> ApiResponse:  # noqa: E501
         """get_substitutions_by_game  # noqa: E501
 
-        Returns all player substitutions for a given game  # noqa: E501
+        Returns all recorded player substitutions for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_game_with_http_info(game_id, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -1098,19 +1098,19 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_substitutions_by_player_id(self, player_id : Annotated[StrictInt, Field(..., description="Required player id filter")], season : Annotated[StrictInt, Field(..., description="Required season filter")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
+    def get_substitutions_by_player_id(self, player_id : Annotated[StrictInt, Field(..., description="The player ID.")], season : Annotated[StrictInt, Field(..., description="The season to return.")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
         """get_substitutions_by_player_id  # noqa: E501
 
-        Retrieve all player substitutions for a given player and season  # noqa: E501
+        Returns all recorded player substitutions for a player and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_player_id(player_id, season, async_req=True)
         >>> result = thread.get()
 
-        :param player_id: Required player id filter (required)
+        :param player_id: The player ID. (required)
         :type player_id: int
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -1130,19 +1130,19 @@ class PlaysApi:
         return self.get_substitutions_by_player_id_with_http_info(player_id, season, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_substitutions_by_player_id_with_http_info(self, player_id : Annotated[StrictInt, Field(..., description="Required player id filter")], season : Annotated[StrictInt, Field(..., description="Required season filter")], **kwargs) -> ApiResponse:  # noqa: E501
+    def get_substitutions_by_player_id_with_http_info(self, player_id : Annotated[StrictInt, Field(..., description="The player ID.")], season : Annotated[StrictInt, Field(..., description="The season to return.")], **kwargs) -> ApiResponse:  # noqa: E501
         """get_substitutions_by_player_id  # noqa: E501
 
-        Retrieve all player substitutions for a given player and season  # noqa: E501
+        Returns all recorded player substitutions for a player and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_player_id_with_http_info(player_id, season, async_req=True)
         >>> result = thread.get()
 
-        :param player_id: Required player id filter (required)
+        :param player_id: The player ID. (required)
         :type player_id: int
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -1246,19 +1246,19 @@ class PlaysApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_substitutions_by_team(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
+    def get_substitutions_by_team(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], **kwargs) -> List[PlayerSubsititution]:  # noqa: E501
         """get_substitutions_by_team  # noqa: E501
 
-        Retrieve all player substitutions for a given team and season  # noqa: E501
+        Returns all recorded player substitutions for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_team(season, team, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -1278,19 +1278,19 @@ class PlaysApi:
         return self.get_substitutions_by_team_with_http_info(season, team, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_substitutions_by_team_with_http_info(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], **kwargs) -> ApiResponse:  # noqa: E501
+    def get_substitutions_by_team_with_http_info(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], **kwargs) -> ApiResponse:  # noqa: E501
         """get_substitutions_by_team  # noqa: E501
 
-        Retrieve all player substitutions for a given team and season  # noqa: E501
+        Returns all recorded player substitutions for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_substitutions_by_team_with_http_info(season, team, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

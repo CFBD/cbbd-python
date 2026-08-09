@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical poll data
+Returns historical poll rankings.
 
 ### Example
 
@@ -46,12 +46,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RankingsApi(api_client)
-    season = 56 # int | Optional season filter (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    week = 56 # int | Optional week filter (optional)
-    poll_type = 'poll_type_example' # str | Optional poll type filter (\"ap\" or \"coaches\") (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    week = 56 # int | Filters results to the specified week. (optional)
+    poll_type = 'poll_type_example' # str | Filters results to the AP or Coaches Poll. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_rankings(season=season, season_type=season_type, week=week, poll_type=poll_type, team=team, conference=conference)
@@ -67,12 +67,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Optional season filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **week** | **int**| Optional week filter | [optional] 
- **poll_type** | **str**| Optional poll type filter (\&quot;ap\&quot; or \&quot;coaches\&quot;) | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **week** | **int**| Filters results to the specified week. | [optional] 
+ **poll_type** | **str**| Filters results to the AP or Coaches Poll. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 

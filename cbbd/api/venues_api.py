@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -47,7 +47,7 @@ class VenuesApi:
     def get_venues(self, **kwargs) -> List[VenueInfo]:  # noqa: E501
         """get_venues  # noqa: E501
 
-        Retrieves list of available venues  # noqa: E501
+        Returns available venues and location information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -75,7 +75,7 @@ class VenuesApi:
     def get_venues_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_venues  # noqa: E501
 
-        Retrieves list of available venues  # noqa: E501
+        Returns available venues and location information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

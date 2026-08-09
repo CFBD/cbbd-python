@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -49,21 +49,21 @@ class RatingsApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_adjusted_efficiency(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> List[AdjustedEfficiencyInfo]:  # noqa: E501
+    def get_adjusted_efficiency(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[AdjustedEfficiencyInfo]:  # noqa: E501
         """get_adjusted_efficiency  # noqa: E501
 
-        Retrieves adjusted efficiency ratings for the provided season, team, or conference.  # noqa: E501
+        Returns adjusted offensive and defensive efficiency ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_adjusted_efficiency(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -83,21 +83,21 @@ class RatingsApi:
         return self.get_adjusted_efficiency_with_http_info(season, team, conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_adjusted_efficiency_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_adjusted_efficiency_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_adjusted_efficiency  # noqa: E501
 
-        Retrieves adjusted efficiency ratings for the provided season, team, or conference.  # noqa: E501
+        Returns adjusted offensive and defensive efficiency ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_adjusted_efficiency_with_http_info(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -205,21 +205,21 @@ class RatingsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_elo(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> List[TeamElo]:  # noqa: E501
+    def get_elo(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[TeamElo]:  # noqa: E501
         """get_elo  # noqa: E501
 
-        Retrieves historical Elo ratings  # noqa: E501
+        Returns historical Elo ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_elo(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -239,21 +239,21 @@ class RatingsApi:
         return self.get_elo_with_http_info(season, team, conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_elo_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_elo_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_elo  # noqa: E501
 
-        Retrieves historical Elo ratings  # noqa: E501
+        Returns historical Elo ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_elo_with_http_info(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -361,21 +361,21 @@ class RatingsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_srs(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> List[SrsInfo]:  # noqa: E501
+    def get_srs(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[SrsInfo]:  # noqa: E501
         """get_srs  # noqa: E501
 
-        Retrieves SRS ratings for the provided season, team, or conference.  # noqa: E501
+        Returns Simple Rating System (SRS) ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_srs(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -395,21 +395,21 @@ class RatingsApi:
         return self.get_srs_with_http_info(season, team, conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_srs_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_srs_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_srs  # noqa: E501
 
-        Retrieves SRS ratings for the provided season, team, or conference.  # noqa: E501
+        Returns Simple Rating System (SRS) ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_srs_with_http_info(season, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

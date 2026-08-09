@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -49,23 +49,23 @@ class DraftApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_draft_picks(self, year : Annotated[Optional[StrictInt], Field(description="Optional draft year filter")] = None, draft_team : Annotated[Optional[StrictStr], Field(description="Optional NBA team filter")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Optional source team (e.g. NCAA) filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Optional player position abbreviation filter")] = None, **kwargs) -> List[DraftPick]:  # noqa: E501
+    def get_draft_picks(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified draft year.")] = None, draft_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified NBA team.")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified college team.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position abbreviation.")] = None, **kwargs) -> List[DraftPick]:  # noqa: E501
         """get_draft_picks  # noqa: E501
 
-        Retrieves historical NBA draft picks  # noqa: E501
+        Returns historical NBA draft picks.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_draft_picks(year, draft_team, source_team, position, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional draft year filter
+        :param year: Filters results to the specified draft year.
         :type year: int
-        :param draft_team: Optional NBA team filter
+        :param draft_team: Filters results to the specified NBA team.
         :type draft_team: str
-        :param source_team: Optional source team (e.g. NCAA) filter
+        :param source_team: Filters results to the specified college team.
         :type source_team: str
-        :param position: Optional player position abbreviation filter
+        :param position: Filters results to the specified player position abbreviation.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -85,23 +85,23 @@ class DraftApi:
         return self.get_draft_picks_with_http_info(year, draft_team, source_team, position, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_draft_picks_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Optional draft year filter")] = None, draft_team : Annotated[Optional[StrictStr], Field(description="Optional NBA team filter")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Optional source team (e.g. NCAA) filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Optional player position abbreviation filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_draft_picks_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified draft year.")] = None, draft_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified NBA team.")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified college team.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_draft_picks  # noqa: E501
 
-        Retrieves historical NBA draft picks  # noqa: E501
+        Returns historical NBA draft picks.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_draft_picks_with_http_info(year, draft_team, source_team, position, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional draft year filter
+        :param year: Filters results to the specified draft year.
         :type year: int
-        :param draft_team: Optional NBA team filter
+        :param draft_team: Filters results to the specified NBA team.
         :type draft_team: str
-        :param source_team: Optional source team (e.g. NCAA) filter
+        :param source_team: Filters results to the specified college team.
         :type source_team: str
-        :param position: Optional player position abbreviation filter
+        :param position: Filters results to the specified player position abbreviation.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -216,7 +216,7 @@ class DraftApi:
     def get_draft_positions(self, **kwargs) -> List[DraftPosition]:  # noqa: E501
         """get_draft_positions  # noqa: E501
 
-        Retrieves list of position names for NBA draft prospects  # noqa: E501
+        Returns player positions represented in the draft data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -244,7 +244,7 @@ class DraftApi:
     def get_draft_positions_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_draft_positions  # noqa: E501
 
-        Retrieves list of position names for NBA draft prospects  # noqa: E501
+        Returns player positions represented in the draft data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -348,7 +348,7 @@ class DraftApi:
     def get_draft_teams(self, **kwargs) -> List[DraftTeam]:  # noqa: E501
         """get_draft_teams  # noqa: E501
 
-        Retrieves list of NBA teams  # noqa: E501
+        Returns NBA teams represented in the draft data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -376,7 +376,7 @@ class DraftApi:
     def get_draft_teams_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_draft_teams  # noqa: E501
 
-        Retrieves list of NBA teams  # noqa: E501
+        Returns NBA teams represented in the draft data.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

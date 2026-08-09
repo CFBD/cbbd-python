@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -50,25 +50,25 @@ class LinesApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_lines(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, **kwargs) -> List[GameLines]:  # noqa: E501
+    def get_lines(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, **kwargs) -> List[GameLines]:  # noqa: E501
         """get_lines  # noqa: E501
 
-        Returns betting lines for the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns betting lines for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lines(season, team, conference, start_date_range, end_date_range, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -88,25 +88,25 @@ class LinesApi:
         return self.get_lines_with_http_info(season, team, conference, start_date_range, end_date_range, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_lines_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_lines_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_lines  # noqa: E501
 
-        Returns betting lines for the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns betting lines for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lines_with_http_info(season, team, conference, start_date_range, end_date_range, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -231,7 +231,7 @@ class LinesApi:
     def get_providers(self, **kwargs) -> List[LineProviderInfo]:  # noqa: E501
         """get_providers  # noqa: E501
 
-        Returns a list of available line providers  # noqa: E501
+        Returns available betting line providers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -259,7 +259,7 @@ class LinesApi:
     def get_providers_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_providers  # noqa: E501
 
-        Returns a list of available line providers  # noqa: E501
+        Returns available betting line providers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Returns broadcast information on the first 3000 games that match the provided filters, ordered by start date.
+Returns broadcast records for up to 3,000 games that match the filters, ordered by start date.
 
 ### Example
 
@@ -50,13 +50,13 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.GamesApi(api_client)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start timestamp in ISO 8601 format (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end timestamp in ISO 8601 format (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    season = 3.4 # float | Optional season filter (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    season = 3.4 # float | Filters results to the specified season. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    tournament = 'tournament_example' # str | Filters results to the specified tournament, such as NCAA or NIT. (optional)
 
     try:
         api_response = api_instance.get_broadcasts(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
@@ -72,13 +72,13 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_range** | **datetime**| Optional start timestamp in ISO 8601 format | [optional] 
- **end_date_range** | **datetime**| Optional end timestamp in ISO 8601 format | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **season** | **float**| Optional season filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **season** | **float**| Filters results to the specified season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **tournament** | **str**| Filters results to the specified tournament, such as NCAA or NIT. | [optional] 
 
 ### Return type
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns player box score statistics and metrics on the first 1000 games that match the provided filters, ordered by start date.
+Returns player box scores and advanced metrics for up to 1,000 games that match the filters, ordered by start date.
 
 ### Example
 
@@ -139,13 +139,13 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.GamesApi(api_client)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start timestamp in ISO 8601 format (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end timestamp in ISO 8601 format (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    season = 3.4 # float | Optional season filter (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    season = 3.4 # float | Filters results to the specified season. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    tournament = 'tournament_example' # str | Filters results to the specified tournament, such as NCAA or NIT. (optional)
 
     try:
         api_response = api_instance.get_game_players(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
@@ -161,13 +161,13 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_range** | **datetime**| Optional start timestamp in ISO 8601 format | [optional] 
- **end_date_range** | **datetime**| Optional end timestamp in ISO 8601 format | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **season** | **float**| Optional season filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **season** | **float**| Filters results to the specified season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **tournament** | **str**| Filters results to the specified tournament, such as NCAA or NIT. | [optional] 
 
 ### Return type
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team box score statistics and metrics on the first 3000 games that match the provided filters, ordered by start date.
+Returns team box scores and advanced metrics for up to 3,000 games that match the filters, ordered by start date.
 
 ### Example
 
@@ -228,13 +228,13 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.GamesApi(api_client)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start timestamp in ISO 8601 format (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end timestamp in ISO 8601 format (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    season = 3.4 # float | Optional season filter (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    season = 3.4 # float | Filters results to the specified season. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    tournament = 'tournament_example' # str | Filters results to the specified tournament, such as NCAA or NIT. (optional)
 
     try:
         api_response = api_instance.get_game_teams(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, tournament=tournament)
@@ -250,13 +250,13 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_range** | **datetime**| Optional start timestamp in ISO 8601 format | [optional] 
- **end_date_range** | **datetime**| Optional end timestamp in ISO 8601 format | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **season** | **float**| Optional season filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **season** | **float**| Filters results to the specified season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **tournament** | **str**| Filters results to the specified tournament, such as NCAA or NIT. | [optional] 
 
 ### Return type
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns information on the first 3000 games that match the provided filters, ordered by start date.
+Returns up to 3,000 games that match the filters, ordered by start date.
 
 ### Example
 
@@ -318,14 +318,14 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.GamesApi(api_client)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start timestamp in ISO 8601 format (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end timestamp in ISO 8601 format (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    season = 56 # int | Optional season filter (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    status = cbbd.GameStatus() # GameStatus | Optional game status filter (optional)
-    tournament = 'tournament_example' # str | Optional tournament filter (e.g. NCAA, NIT, etc) (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    status = cbbd.GameStatus() # GameStatus | Filters results to the specified game status. (optional)
+    tournament = 'tournament_example' # str | Filters results to the specified tournament, such as NCAA or NIT. (optional)
 
     try:
         api_response = api_instance.get_games(start_date_range=start_date_range, end_date_range=end_date_range, team=team, conference=conference, season=season, season_type=season_type, status=status, tournament=tournament)
@@ -341,14 +341,14 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_range** | **datetime**| Optional start timestamp in ISO 8601 format | [optional] 
- **end_date_range** | **datetime**| Optional end timestamp in ISO 8601 format | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **season** | **int**| Optional season filter | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **status** | [**GameStatus**](.md)| Optional game status filter | [optional] 
- **tournament** | **str**| Optional tournament filter (e.g. NCAA, NIT, etc) | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **status** | [**GameStatus**](.md)| Filters results to the specified game status. | [optional] 
+ **tournament** | **str**| Filters results to the specified tournament, such as NCAA or NIT. | [optional] 
 
 ### Return type
 
@@ -375,7 +375,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves live scoreboard data (requires a Patreon Tier 1 subscription or higher)
+Returns live scoreboard data. This endpoint requires Patreon Tier 1 access or higher.
 
 ### Example
 
@@ -408,7 +408,7 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.GamesApi(api_client)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_scoreboard(conference=conference)
@@ -424,7 +424,7 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **conference** | **str**| Optional conference filter | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 

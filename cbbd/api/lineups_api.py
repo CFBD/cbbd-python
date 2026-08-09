@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -49,17 +49,17 @@ class LineupsApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_lineup_stats_by_game(self, game_id : Annotated[StrictInt, Field(..., description="Required game id filter")], **kwargs) -> List[LineupStats]:  # noqa: E501
+    def get_lineup_stats_by_game(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], **kwargs) -> List[LineupStats]:  # noqa: E501
         """get_lineup_stats_by_game  # noqa: E501
 
-        Queries lineup statistics for a specific game  # noqa: E501
+        Returns lineup statistics for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lineup_stats_by_game(game_id, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Required game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -79,17 +79,17 @@ class LineupsApi:
         return self.get_lineup_stats_by_game_with_http_info(game_id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_lineup_stats_by_game_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="Required game id filter")], **kwargs) -> ApiResponse:  # noqa: E501
+    def get_lineup_stats_by_game_with_http_info(self, game_id : Annotated[StrictInt, Field(..., description="The game ID.")], **kwargs) -> ApiResponse:  # noqa: E501
         """get_lineup_stats_by_game  # noqa: E501
 
-        Queries lineup statistics for a specific game  # noqa: E501
+        Returns lineup statistics for a game.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lineup_stats_by_game_with_http_info(game_id, async_req=True)
         >>> result = thread.get()
 
-        :param game_id: Required game id filter (required)
+        :param game_id: The game ID. (required)
         :type game_id: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -189,23 +189,23 @@ class LineupsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_lineups_by_team_season(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], start_date_range : Annotated[Optional[datetime], Field(description="Optional start date range filter")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end date range filter")] = None, **kwargs) -> List[LineupStats]:  # noqa: E501
+    def get_lineups_by_team_season(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, **kwargs) -> List[LineupStats]:  # noqa: E501
         """get_lineups_by_team_season  # noqa: E501
 
-        Queries lineup statistics for a given team and season  # noqa: E501
+        Returns lineup statistics for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lineups_by_team_season(season, team, start_date_range, end_date_range, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
-        :param start_date_range: Optional start date range filter
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end date range filter
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -225,23 +225,23 @@ class LineupsApi:
         return self.get_lineups_by_team_season_with_http_info(season, team, start_date_range, end_date_range, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_lineups_by_team_season_with_http_info(self, season : Annotated[StrictInt, Field(..., description="Required season filter")], team : Annotated[StrictStr, Field(..., description="Required team filter")], start_date_range : Annotated[Optional[datetime], Field(description="Optional start date range filter")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end date range filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_lineups_by_team_season_with_http_info(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[StrictStr, Field(..., description="The team name to return.")], start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_lineups_by_team_season  # noqa: E501
 
-        Queries lineup statistics for a given team and season  # noqa: E501
+        Returns lineup statistics for a team and season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_lineups_by_team_season_with_http_info(season, team, start_date_range, end_date_range, async_req=True)
         >>> result = thread.get()
 
-        :param season: Required season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Required team filter (required)
+        :param team: The team name to return. (required)
         :type team: str
-        :param start_date_range: Optional start date range filter
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end date range filter
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves adjusted efficiency ratings for the provided season, team, or conference.
+Returns adjusted offensive and defensive efficiency ratings.
 
 ### Example
 
@@ -47,9 +47,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RatingsApi(api_client)
-    season = 56 # int | Optional season filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_adjusted_efficiency(season=season, team=team, conference=conference)
@@ -65,9 +65,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Optional season filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical Elo ratings
+Returns historical Elo ratings.
 
 ### Example
 
@@ -127,9 +127,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RatingsApi(api_client)
-    season = 56 # int | Optional season filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference filter (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_elo(season=season, team=team, conference=conference)
@@ -145,9 +145,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Optional season filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference filter | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves SRS ratings for the provided season, team, or conference.
+Returns Simple Rating System (SRS) ratings.
 
 ### Example
 
@@ -207,9 +207,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RatingsApi(api_client)
-    season = 56 # int | Optional season filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    season = 56 # int | Filters results to the specified season. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_srs(season=season, team=team, conference=conference)
@@ -225,9 +225,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Optional season filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **season** | **int**| Filters results to the specified season. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 

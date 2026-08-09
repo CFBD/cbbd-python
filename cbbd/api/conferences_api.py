@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -48,17 +48,17 @@ class ConferencesApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_conference_history(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> List[ConferenceHistory]:  # noqa: E501
+    def get_conference_history(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[ConferenceHistory]:  # noqa: E501
         """get_conference_history  # noqa: E501
 
-        Retrieves historical conference membership information  # noqa: E501
+        Returns historical conference membership records.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_conference_history(conference, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -78,17 +78,17 @@ class ConferencesApi:
         return self.get_conference_history_with_http_info(conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_conference_history_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_conference_history_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_conference_history  # noqa: E501
 
-        Retrieves historical conference membership information  # noqa: E501
+        Returns historical conference membership records.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_conference_history_with_http_info(conference, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -191,7 +191,7 @@ class ConferencesApi:
     def get_conferences(self, **kwargs) -> List[ConferenceInfo]:  # noqa: E501
         """get_conferences  # noqa: E501
 
-        Retrieves list of available conferences  # noqa: E501
+        Returns available conferences and their identifiers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
@@ -219,7 +219,7 @@ class ConferencesApi:
     def get_conferences_with_http_info(self, **kwargs) -> ApiResponse:  # noqa: E501
         """get_conferences  # noqa: E501
 
-        Retrieves list of available conferences  # noqa: E501
+        Returns available conferences and their identifiers.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 

@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -48,19 +48,19 @@ class TeamsApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_team_roster(self, season : Annotated[StrictInt, Field(..., description="Season filter")], team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, **kwargs) -> List[TeamRoster]:  # noqa: E501
+    def get_team_roster(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, **kwargs) -> List[TeamRoster]:  # noqa: E501
         """get_team_roster  # noqa: E501
 
-        Retrieves team roster information  # noqa: E501
+        Returns team rosters for a season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_team_roster(season, team, async_req=True)
         >>> result = thread.get()
 
-        :param season: Season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -80,19 +80,19 @@ class TeamsApi:
         return self.get_team_roster_with_http_info(season, team, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_team_roster_with_http_info(self, season : Annotated[StrictInt, Field(..., description="Season filter")], team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_team_roster_with_http_info(self, season : Annotated[StrictInt, Field(..., description="The season to return.")], team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_team_roster  # noqa: E501
 
-        Retrieves team roster information  # noqa: E501
+        Returns team rosters for a season.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_team_roster_with_http_info(season, team, async_req=True)
         >>> result = thread.get()
 
-        :param season: Season filter (required)
+        :param season: The season to return. (required)
         :type season: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -196,19 +196,19 @@ class TeamsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_teams(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, **kwargs) -> List[TeamInfo]:  # noqa: E501
+    def get_teams(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[StrictInt], Field(description="Returns conference membership for the specified season.")] = None, **kwargs) -> List[TeamInfo]:  # noqa: E501
         """get_teams  # noqa: E501
 
-        Retrieves historical team information  # noqa: E501
+        Returns team and conference information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_teams(conference, season, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Returns conference membership for the specified season.
         :type season: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -228,19 +228,19 @@ class TeamsApi:
         return self.get_teams_with_http_info(conference, season, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_teams_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_teams_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[StrictInt], Field(description="Returns conference membership for the specified season.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_teams  # noqa: E501
 
-        Retrieves historical team information  # noqa: E501
+        Returns team and conference information.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_teams_with_http_info(conference, season, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Returns conference membership for the specified season.
         :type season: int
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

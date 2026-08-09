@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 
-Retrieve list of play types
+Returns available play types and their identifiers.
 
 ### Example
 
@@ -92,7 +92,7 @@ This endpoint does not need any parameter.
 
 
 
-Returns all plays for a given game
+Returns all recorded plays for a game.
 
 ### Example
 
@@ -125,8 +125,8 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    game_id = 56 # int | Game id filter
-    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+    game_id = 56 # int | The game ID.
+    shooting_plays_only = True # bool | When true, returns only shooting plays. (optional)
 
     try:
         api_response = api_instance.get_plays(game_id, shooting_plays_only=shooting_plays_only)
@@ -142,8 +142,8 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game id filter | 
- **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+ **game_id** | **int**| The game ID. | 
+ **shooting_plays_only** | **bool**| When true, returns only shooting plays. | [optional] 
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all plays for a given UTC date
+Returns all recorded plays for a UTC date.
 
 ### Example
 
@@ -203,9 +203,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    var_date = '2013-10-20T19:20:30+01:00' # datetime | Required date filter in ISO 8601 format (YYYY-MM-DD)
-    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
-    utc_offset = 3.4 # float | Optional UTC offset in hours to adjust the date range (optional)
+    var_date = '2013-10-20T19:20:30+01:00' # datetime | The date to return in ISO 8601 format (YYYY-MM-DD).
+    shooting_plays_only = True # bool | When true, returns only shooting plays. (optional)
+    utc_offset = 3.4 # float | Shifts the date range by this number of hours from UTC. (optional)
 
     try:
         api_response = api_instance.get_plays_by_date(var_date, shooting_plays_only=shooting_plays_only, utc_offset=utc_offset)
@@ -221,9 +221,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **var_date** | **datetime**| Required date filter in ISO 8601 format (YYYY-MM-DD) | 
- **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
- **utc_offset** | **float**| Optional UTC offset in hours to adjust the date range | [optional] 
+ **var_date** | **datetime**| The date to return in ISO 8601 format (YYYY-MM-DD). | 
+ **shooting_plays_only** | **bool**| When true, returns only shooting plays. | [optional] 
+ **utc_offset** | **float**| Shifts the date range by this number of hours from UTC. | [optional] 
 
 ### Return type
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all plays for a given player and season
+Returns all recorded plays for a player and season.
 
 ### Example
 
@@ -283,9 +283,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    player_id = 56 # int | Required player id filter
-    season = 56 # int | Required season filter
-    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+    player_id = 56 # int | The player ID.
+    season = 56 # int | The season to return.
+    shooting_plays_only = True # bool | When true, returns only shooting plays. (optional)
 
     try:
         api_response = api_instance.get_plays_by_player_id(player_id, season, shooting_plays_only=shooting_plays_only)
@@ -301,9 +301,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **player_id** | **int**| Required player id filter | 
- **season** | **int**| Required season filter | 
- **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+ **player_id** | **int**| The player ID. | 
+ **season** | **int**| The season to return. | 
+ **shooting_plays_only** | **bool**| When true, returns only shooting plays. | [optional] 
 
 ### Return type
 
@@ -330,7 +330,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all plays for a given team and season
+Returns all recorded plays for a team and season.
 
 ### Example
 
@@ -363,9 +363,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    season = 56 # int | Required season filter
-    team = 'team_example' # str | Required team filter
-    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+    season = 56 # int | The season to return.
+    team = 'team_example' # str | The team name to return.
+    shooting_plays_only = True # bool | When true, returns only shooting plays. (optional)
 
     try:
         api_response = api_instance.get_plays_by_team(season, team, shooting_plays_only=shooting_plays_only)
@@ -381,9 +381,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Required season filter | 
- **team** | **str**| Required team filter | 
- **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+ **season** | **int**| The season to return. | 
+ **team** | **str**| The team name to return. | 
+ **shooting_plays_only** | **bool**| When true, returns only shooting plays. | [optional] 
 
 ### Return type
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all plays for a given tournament and season
+Returns all recorded plays for a tournament and season.
 
 ### Example
 
@@ -443,9 +443,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    tournament = 'tournament_example' # str | Required tournament filter (e.g. NCAA, NIT, etc)
-    season = 3.4 # float | Required season filter
-    shooting_plays_only = True # bool | Optional filter to only return shooting plays (optional)
+    tournament = 'tournament_example' # str | The tournament to return, such as NCAA or NIT.
+    season = 3.4 # float | The season to return.
+    shooting_plays_only = True # bool | When true, returns only shooting plays. (optional)
 
     try:
         api_response = api_instance.get_plays_by_tournament(tournament, season, shooting_plays_only=shooting_plays_only)
@@ -461,9 +461,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tournament** | **str**| Required tournament filter (e.g. NCAA, NIT, etc) | 
- **season** | **float**| Required season filter | 
- **shooting_plays_only** | **bool**| Optional filter to only return shooting plays | [optional] 
+ **tournament** | **str**| The tournament to return, such as NCAA or NIT. | 
+ **season** | **float**| The season to return. | 
+ **shooting_plays_only** | **bool**| When true, returns only shooting plays. | [optional] 
 
 ### Return type
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns all player substitutions for a given game
+Returns all recorded player substitutions for a game.
 
 ### Example
 
@@ -523,7 +523,7 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    game_id = 56 # int | Game id filter
+    game_id = 56 # int | The game ID.
 
     try:
         api_response = api_instance.get_substitutions_by_game(game_id)
@@ -539,7 +539,7 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Game id filter | 
+ **game_id** | **int**| The game ID. | 
 
 ### Return type
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all player substitutions for a given player and season
+Returns all recorded player substitutions for a player and season.
 
 ### Example
 
@@ -599,8 +599,8 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    player_id = 56 # int | Required player id filter
-    season = 56 # int | Required season filter
+    player_id = 56 # int | The player ID.
+    season = 56 # int | The season to return.
 
     try:
         api_response = api_instance.get_substitutions_by_player_id(player_id, season)
@@ -616,8 +616,8 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **player_id** | **int**| Required player id filter | 
- **season** | **int**| Required season filter | 
+ **player_id** | **int**| The player ID. | 
+ **season** | **int**| The season to return. | 
 
 ### Return type
 
@@ -644,7 +644,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieve all player substitutions for a given team and season
+Returns all recorded player substitutions for a team and season.
 
 ### Example
 
@@ -677,8 +677,8 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.PlaysApi(api_client)
-    season = 56 # int | Required season filter
-    team = 'team_example' # str | Required team filter
+    season = 56 # int | The season to return.
+    team = 'team_example' # str | The team name to return.
 
     try:
         api_response = api_instance.get_substitutions_by_team(season, team)
@@ -694,8 +694,8 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Required season filter | 
- **team** | **str**| Required team filter | 
+ **season** | **int**| The season to return. | 
+ **team** | **str**| The team name to return. | 
 
 ### Return type
 

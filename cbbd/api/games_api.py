@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -55,29 +55,29 @@ class GamesApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_broadcasts(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> List[GameMediaInfo]:  # noqa: E501
+    def get_broadcasts(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> List[GameMediaInfo]:  # noqa: E501
         """get_broadcasts  # noqa: E501
 
-        Returns broadcast information on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns broadcast records for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_broadcasts(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -97,29 +97,29 @@ class GamesApi:
         return self.get_broadcasts_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_broadcasts_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_broadcasts_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_broadcasts  # noqa: E501
 
-        Returns broadcast information on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns broadcast records for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_broadcasts_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -249,29 +249,29 @@ class GamesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_game_players(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> List[GameBoxScorePlayers]:  # noqa: E501
+    def get_game_players(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> List[GameBoxScorePlayers]:  # noqa: E501
         """get_game_players  # noqa: E501
 
-        Returns player box score statistics and metrics on the first 1000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns player box scores and advanced metrics for up to 1,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_game_players(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -291,29 +291,29 @@ class GamesApi:
         return self.get_game_players_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_game_players_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_game_players_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_game_players  # noqa: E501
 
-        Returns player box score statistics and metrics on the first 1000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns player box scores and advanced metrics for up to 1,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_game_players_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -443,29 +443,29 @@ class GamesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_game_teams(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> List[GameBoxScoreTeam]:  # noqa: E501
+    def get_game_teams(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> List[GameBoxScoreTeam]:  # noqa: E501
         """get_game_teams  # noqa: E501
 
-        Returns team box score statistics and metrics on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns team box scores and advanced metrics for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_game_teams(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -485,29 +485,29 @@ class GamesApi:
         return self.get_game_teams_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_game_teams_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_game_teams_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_game_teams  # noqa: E501
 
-        Returns team box score statistics and metrics on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns team box scores and advanced metrics for up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_game_teams_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: float
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -637,31 +637,31 @@ class GamesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_games(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, status : Annotated[Optional[GameStatus], Field(description="Optional game status filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> List[GameInfo]:  # noqa: E501
+    def get_games(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, status : Annotated[Optional[GameStatus], Field(description="Filters results to the specified game status.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> List[GameInfo]:  # noqa: E501
         """get_games  # noqa: E501
 
-        Returns information on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_games(start_date_range, end_date_range, team, conference, season, season_type, status, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param status: Optional game status filter
+        :param status: Filters results to the specified game status.
         :type status: GameStatus
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -681,31 +681,31 @@ class GamesApi:
         return self.get_games_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, status, tournament, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_games_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Optional start timestamp in ISO 8601 format")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Optional end timestamp in ISO 8601 format")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team name filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, status : Annotated[Optional[GameStatus], Field(description="Optional game status filter")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Optional tournament filter (e.g. NCAA, NIT, etc)")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_games_with_http_info(self, start_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or after this ISO 8601 timestamp.")] = None, end_date_range : Annotated[Optional[datetime], Field(description="Includes games starting at or before this ISO 8601 timestamp.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, status : Annotated[Optional[GameStatus], Field(description="Filters results to the specified game status.")] = None, tournament : Annotated[Optional[StrictStr], Field(description="Filters results to the specified tournament, such as NCAA or NIT.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_games  # noqa: E501
 
-        Returns information on the first 3000 games that match the provided filters, ordered by start date.  # noqa: E501
+        Returns up to 3,000 games that match the filters, ordered by start date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_games_with_http_info(start_date_range, end_date_range, team, conference, season, season_type, status, tournament, async_req=True)
         >>> result = thread.get()
 
-        :param start_date_range: Optional start timestamp in ISO 8601 format
+        :param start_date_range: Includes games starting at or after this ISO 8601 timestamp.
         :type start_date_range: datetime
-        :param end_date_range: Optional end timestamp in ISO 8601 format
+        :param end_date_range: Includes games starting at or before this ISO 8601 timestamp.
         :type end_date_range: datetime
-        :param team: Optional team name filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param status: Optional game status filter
+        :param status: Filters results to the specified game status.
         :type status: GameStatus
-        :param tournament: Optional tournament filter (e.g. NCAA, NIT, etc)
+        :param tournament: Filters results to the specified tournament, such as NCAA or NIT.
         :type tournament: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -839,17 +839,17 @@ class GamesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_scoreboard(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> List[ScoreboardGame]:  # noqa: E501
+    def get_scoreboard(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[ScoreboardGame]:  # noqa: E501
         """get_scoreboard  # noqa: E501
 
-        Retrieves live scoreboard data (requires a Patreon Tier 1 subscription or higher)  # noqa: E501
+        Returns live scoreboard data. This endpoint requires Patreon Tier 1 access or higher.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_scoreboard(conference, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -869,17 +869,17 @@ class GamesApi:
         return self.get_scoreboard_with_http_info(conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_scoreboard_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_scoreboard_with_http_info(self, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_scoreboard  # noqa: E501
 
-        Retrieves live scoreboard data (requires a Patreon Tier 1 subscription or higher)  # noqa: E501
+        Returns live scoreboard data. This endpoint requires Patreon Tier 1 access or higher.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_scoreboard_with_http_info(conference, async_req=True)
         >>> result = thread.get()
 
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

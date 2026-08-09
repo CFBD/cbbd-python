@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical conference membership information
+Returns historical conference membership records.
 
 ### Example
 
@@ -46,7 +46,7 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.ConferencesApi(api_client)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_conference_history(conference=conference)
@@ -62,7 +62,7 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves list of available conferences
+Returns available conferences and their identifiers.
 
 ### Example
 

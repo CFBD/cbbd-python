@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical NBA draft picks
+Returns historical NBA draft picks.
 
 ### Example
 
@@ -47,10 +47,10 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.DraftApi(api_client)
-    year = 56 # int | Optional draft year filter (optional)
-    draft_team = 'draft_team_example' # str | Optional NBA team filter (optional)
-    source_team = 'source_team_example' # str | Optional source team (e.g. NCAA) filter (optional)
-    position = 'position_example' # str | Optional player position abbreviation filter (optional)
+    year = 56 # int | Filters results to the specified draft year. (optional)
+    draft_team = 'draft_team_example' # str | Filters results to the specified NBA team. (optional)
+    source_team = 'source_team_example' # str | Filters results to the specified college team. (optional)
+    position = 'position_example' # str | Filters results to the specified player position abbreviation. (optional)
 
     try:
         api_response = api_instance.get_draft_picks(year=year, draft_team=draft_team, source_team=source_team, position=position)
@@ -66,10 +66,10 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional draft year filter | [optional] 
- **draft_team** | **str**| Optional NBA team filter | [optional] 
- **source_team** | **str**| Optional source team (e.g. NCAA) filter | [optional] 
- **position** | **str**| Optional player position abbreviation filter | [optional] 
+ **year** | **int**| Filters results to the specified draft year. | [optional] 
+ **draft_team** | **str**| Filters results to the specified NBA team. | [optional] 
+ **source_team** | **str**| Filters results to the specified college team. | [optional] 
+ **position** | **str**| Filters results to the specified player position abbreviation. | [optional] 
 
 ### Return type
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves list of position names for NBA draft prospects
+Returns player positions represented in the draft data.
 
 ### Example
 
@@ -168,7 +168,7 @@ This endpoint does not need any parameter.
 
 
 
-Retrieves list of NBA teams
+Returns NBA teams represented in the draft data.
 
 ### Example
 

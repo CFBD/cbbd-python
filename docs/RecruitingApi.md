@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves historical transfer portal activity
+Returns historical transfer portal activity.
 
 ### Example
 
@@ -47,12 +47,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RecruitingApi(api_client)
-    year = 3.4 # float |  (optional)
-    source_team = 'source_team_example' # str | Source team filter (optional)
-    destination_team = 'destination_team_example' # str | Destination team filter (optional)
-    source_conference = 'source_conference_example' # str | Source conference filter (optional)
-    destination_conference = 'destination_conference_example' # str | Destination conference filter (optional)
-    position = 'position_example' # str | Position filter (optional)
+    year = 3.4 # float | Filters results to the specified transfer season. (optional)
+    source_team = 'source_team_example' # str | Filters results to the specified source team. (optional)
+    destination_team = 'destination_team_example' # str | Filters results to the specified destination team. (optional)
+    source_conference = 'source_conference_example' # str | Filters results to the specified source conference abbreviation. (optional)
+    destination_conference = 'destination_conference_example' # str | Filters results to the specified destination conference abbreviation. (optional)
+    position = 'position_example' # str | Filters results to the specified player position. (optional)
 
     try:
         api_response = api_instance.get_portal_transfers(year=year, source_team=source_team, destination_team=destination_team, source_conference=source_conference, destination_conference=destination_conference, position=position)
@@ -68,12 +68,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **float**|  | [optional] 
- **source_team** | **str**| Source team filter | [optional] 
- **destination_team** | **str**| Destination team filter | [optional] 
- **source_conference** | **str**| Source conference filter | [optional] 
- **destination_conference** | **str**| Destination conference filter | [optional] 
- **position** | **str**| Position filter | [optional] 
+ **year** | **float**| Filters results to the specified transfer season. | [optional] 
+ **source_team** | **str**| Filters results to the specified source team. | [optional] 
+ **destination_team** | **str**| Filters results to the specified destination team. | [optional] 
+ **source_conference** | **str**| Filters results to the specified source conference abbreviation. | [optional] 
+ **destination_conference** | **str**| Filters results to the specified destination conference abbreviation. | [optional] 
+ **position** | **str**| Filters results to the specified player position. | [optional] 
 
 ### Return type
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical composite player recruiting ranking and ratings
+Returns historical composite player recruiting rankings and ratings.
 
 ### Example
 
@@ -133,10 +133,10 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RecruitingApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional college team filter (optional)
-    conference = 'conference_example' # str | Optional college conference filter (optional)
-    position = 'position_example' # str | Optional position filter (optional)
+    year = 56 # int | Filters results to the specified recruiting year. (optional)
+    team = 'team_example' # str | Filters results to the specified college team. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    position = 'position_example' # str | Filters results to the specified player position. (optional)
 
     try:
         api_response = api_instance.get_recruits(year=year, team=team, conference=conference, position=position)
@@ -152,10 +152,10 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional college team filter | [optional] 
- **conference** | **str**| Optional college conference filter | [optional] 
- **position** | **str**| Optional position filter | [optional] 
+ **year** | **int**| Filters results to the specified recruiting year. | [optional] 
+ **team** | **str**| Filters results to the specified college team. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **position** | **str**| Filters results to the specified player position. | [optional] 
 
 ### Return type
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical composite team recruiting rankings
+Returns historical composite team recruiting rankings.
 
 ### Example
 
@@ -215,9 +215,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.RecruitingApi(api_client)
-    year = 56 # int | Optional year filter (optional)
-    team = 'team_example' # str | Optional team filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    year = 56 # int | Filters results to the specified recruiting year. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_team_recruiting_rankings(year=year, team=team, conference=conference)
@@ -233,9 +233,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **year** | **int**| Optional year filter | [optional] 
- **team** | **str**| Optional team filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **year** | **int**| Filters results to the specified recruiting year. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 

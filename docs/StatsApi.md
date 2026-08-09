@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves player season shooting statistics
+Returns player shooting statistics for a season. Provide a team or conference.
 
 ### Example
 
@@ -50,12 +50,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.StatsApi(api_client)
-    season = 56 # int | Required season filter
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Team filter, required if conference is not provided (optional)
-    conference = 'conference_example' # str | Conference abbreviation filter, required if team is not provided (optional)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start date range filter (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end date range filter (optional)
+    season = 56 # int | The season to return.
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. Required when conference is not provided. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. Required when team is not provided. (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_player_season_shooting_stats(season, season_type=season_type, team=team, conference=conference, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -71,12 +71,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Required season filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Team filter, required if conference is not provided | [optional] 
- **conference** | **str**| Conference abbreviation filter, required if team is not provided | [optional] 
- **start_date_range** | **datetime**| Optional start date range filter | [optional] 
- **end_date_range** | **datetime**| Optional end date range filter | [optional] 
+ **season** | **int**| The season to return. | 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **team** | **str**| Filters results to the specified team name. Required when conference is not provided. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. Required when team is not provided. | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns player statistics by season
+Returns player statistics for a season.
 
 ### Example
 
@@ -137,12 +137,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.StatsApi(api_client)
-    season = 3.4 # float | Required season filter
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    season = 3.4 # float | The season to return.
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_player_season_stats(season, season_type=season_type, team=team, conference=conference, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -158,12 +158,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **float**| Required season filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **start_date_range** | **datetime**|  | [optional] 
- **end_date_range** | **datetime**|  | [optional] 
+ **season** | **float**| The season to return. | 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns premium team leaderboard statistics by season, team, or conference (requires a Patreon Tier 2 subscription or higher)
+Returns team leaderboard statistics. This endpoint requires Patreon Tier 2 access or higher.
 
 ### Example
 
@@ -223,9 +223,9 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.StatsApi(api_client)
-    season = 3.4 # float | Optional season filter (optional)
-    team = 'team_example' # str | Optional team name filter (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
+    season = 3.4 # float | Filters results to the specified season. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
 
     try:
         api_response = api_instance.get_team_leaderboard_stats(season=season, team=team, conference=conference)
@@ -241,9 +241,9 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **float**| Optional season filter | [optional] 
- **team** | **str**| Optional team name filter | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
+ **season** | **float**| Filters results to the specified season. | [optional] 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
 
 ### Return type
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves team season shooting statistics
+Returns team shooting statistics for a season. Provide a team or conference.
 
 ### Example
 
@@ -304,12 +304,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.StatsApi(api_client)
-    season = 56 # int | Required season filter
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Team filter, required if conference is not provided (optional)
-    conference = 'conference_example' # str | Conference abbreviation filter, required if team is not provided (optional)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start date range filter (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end date range filter (optional)
+    season = 56 # int | The season to return.
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. Required when conference is not provided. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. Required when team is not provided. (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_team_season_shooting_stats(season, season_type=season_type, team=team, conference=conference, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -325,12 +325,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Required season filter | 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Team filter, required if conference is not provided | [optional] 
- **conference** | **str**| Conference abbreviation filter, required if team is not provided | [optional] 
- **start_date_range** | **datetime**| Optional start date range filter | [optional] 
- **end_date_range** | **datetime**| Optional end date range filter | [optional] 
+ **season** | **int**| The season to return. | 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **team** | **str**| Filters results to the specified team name. Required when conference is not provided. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. Required when team is not provided. | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 
 
-Returns team season statistics by year or team
+Returns team season statistics. Provide at least a season or team.
 
 ### Example
 
@@ -391,12 +391,12 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.StatsApi(api_client)
-    season = 3.4 # float | Optional season filter, required if team is not provided (optional)
-    season_type = cbbd.SeasonType() # SeasonType | Optional season type filter (optional)
-    team = 'team_example' # str | Optional team name filter, required if season is not provided (optional)
-    conference = 'conference_example' # str | Optional conference abbreviation filter (optional)
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
+    season = 3.4 # float | Filters results to the specified season. Required when team is not provided. (optional)
+    season_type = cbbd.SeasonType() # SeasonType | Filters results to the specified season type. (optional)
+    team = 'team_example' # str | Filters results to the specified team name. Required when season is not provided. (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_team_season_stats(season=season, season_type=season_type, team=team, conference=conference, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -412,12 +412,12 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **float**| Optional season filter, required if team is not provided | [optional] 
- **season_type** | [**SeasonType**](.md)| Optional season type filter | [optional] 
- **team** | **str**| Optional team name filter, required if season is not provided | [optional] 
- **conference** | **str**| Optional conference abbreviation filter | [optional] 
- **start_date_range** | **datetime**|  | [optional] 
- **end_date_range** | **datetime**|  | [optional] 
+ **season** | **float**| Filters results to the specified season. Required when team is not provided. | [optional] 
+ **season_type** | [**SeasonType**](.md)| Filters results to the specified season type. | [optional] 
+ **team** | **str**| Filters results to the specified team name. Required when season is not provided. | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 

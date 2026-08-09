@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves list of available venues
+Returns available venues and location information.
 
 ### Example
 

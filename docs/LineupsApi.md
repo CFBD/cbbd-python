@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 
-Queries lineup statistics for a specific game
+Returns lineup statistics for a game.
 
 ### Example
 
@@ -46,7 +46,7 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.LineupsApi(api_client)
-    game_id = 56 # int | Required game id filter
+    game_id = 56 # int | The game ID.
 
     try:
         api_response = api_instance.get_lineup_stats_by_game(game_id)
@@ -62,7 +62,7 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **game_id** | **int**| Required game id filter | 
+ **game_id** | **int**| The game ID. | 
 
 ### Return type
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 
 
-Queries lineup statistics for a given team and season
+Returns lineup statistics for a team and season.
 
 ### Example
 
@@ -122,10 +122,10 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.LineupsApi(api_client)
-    season = 56 # int | Required season filter
-    team = 'team_example' # str | Required team filter
-    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional start date range filter (optional)
-    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Optional end date range filter (optional)
+    season = 56 # int | The season to return.
+    team = 'team_example' # str | The team name to return.
+    start_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or after this ISO 8601 timestamp. (optional)
+    end_date_range = '2013-10-20T19:20:30+01:00' # datetime | Includes games starting at or before this ISO 8601 timestamp. (optional)
 
     try:
         api_response = api_instance.get_lineups_by_team_season(season, team, start_date_range=start_date_range, end_date_range=end_date_range)
@@ -141,10 +141,10 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Required season filter | 
- **team** | **str**| Required team filter | 
- **start_date_range** | **datetime**| Optional start date range filter | [optional] 
- **end_date_range** | **datetime**| Optional end date range filter | [optional] 
+ **season** | **int**| The season to return. | 
+ **team** | **str**| The team name to return. | 
+ **start_date_range** | **datetime**| Includes games starting at or after this ISO 8601 timestamp. | [optional] 
+ **end_date_range** | **datetime**| Includes games starting at or before this ISO 8601 timestamp. | [optional] 
 
 ### Return type
 

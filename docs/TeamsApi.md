@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 
-Retrieves team roster information
+Returns team rosters for a season.
 
 ### Example
 
@@ -46,8 +46,8 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.TeamsApi(api_client)
-    season = 56 # int | Season filter
-    team = 'team_example' # str | Optional team filter (optional)
+    season = 56 # int | The season to return.
+    team = 'team_example' # str | Filters results to the specified team name. (optional)
 
     try:
         api_response = api_instance.get_team_roster(season, team=team)
@@ -63,8 +63,8 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **season** | **int**| Season filter | 
- **team** | **str**| Optional team filter | [optional] 
+ **season** | **int**| The season to return. | 
+ **team** | **str**| Filters results to the specified team name. | [optional] 
 
 ### Return type
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 
 
-Retrieves historical team information
+Returns team and conference information.
 
 ### Example
 
@@ -124,8 +124,8 @@ configuration = cbbd.Configuration(
 with cbbd.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cbbd.TeamsApi(api_client)
-    conference = 'conference_example' # str | Optional conference filter (optional)
-    season = 56 # int | Optional season filter (optional)
+    conference = 'conference_example' # str | Filters results to the specified conference abbreviation. (optional)
+    season = 56 # int | Returns conference membership for the specified season. (optional)
 
     try:
         api_response = api_instance.get_teams(conference=conference, season=season)
@@ -141,8 +141,8 @@ with cbbd.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **conference** | **str**| Optional conference filter | [optional] 
- **season** | **int**| Optional season filter | [optional] 
+ **conference** | **str**| Filters results to the specified conference abbreviation. | [optional] 
+ **season** | **int**| Returns conference membership for the specified season. | [optional] 
 
 ### Return type
 

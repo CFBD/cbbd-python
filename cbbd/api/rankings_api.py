@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -48,27 +48,27 @@ class RankingsApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_rankings(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, week : Annotated[Optional[StrictInt], Field(description="Optional week filter")] = None, poll_type : Annotated[Optional[StrictStr], Field(description="Optional poll type filter (\"ap\" or \"coaches\")")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> List[PollTeamInfo]:  # noqa: E501
+    def get_rankings(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, week : Annotated[Optional[StrictInt], Field(description="Filters results to the specified week.")] = None, poll_type : Annotated[Optional[StrictStr], Field(description="Filters results to the AP or Coaches Poll.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[PollTeamInfo]:  # noqa: E501
         """get_rankings  # noqa: E501
 
-        Retrieves historical poll data  # noqa: E501
+        Returns historical poll rankings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_rankings(season, season_type, week, poll_type, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param week: Optional week filter
+        :param week: Filters results to the specified week.
         :type week: int
-        :param poll_type: Optional poll type filter (\"ap\" or \"coaches\")
+        :param poll_type: Filters results to the AP or Coaches Poll.
         :type poll_type: str
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -88,27 +88,27 @@ class RankingsApi:
         return self.get_rankings_with_http_info(season, season_type, week, poll_type, team, conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_rankings_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Optional season filter")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Optional season type filter")] = None, week : Annotated[Optional[StrictInt], Field(description="Optional week filter")] = None, poll_type : Annotated[Optional[StrictStr], Field(description="Optional poll type filter (\"ap\" or \"coaches\")")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_rankings_with_http_info(self, season : Annotated[Optional[StrictInt], Field(description="Filters results to the specified season.")] = None, season_type : Annotated[Optional[SeasonType], Field(description="Filters results to the specified season type.")] = None, week : Annotated[Optional[StrictInt], Field(description="Filters results to the specified week.")] = None, poll_type : Annotated[Optional[StrictStr], Field(description="Filters results to the AP or Coaches Poll.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_rankings  # noqa: E501
 
-        Retrieves historical poll data  # noqa: E501
+        Returns historical poll rankings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_rankings_with_http_info(season, season_type, week, poll_type, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param season: Optional season filter
+        :param season: Filters results to the specified season.
         :type season: int
-        :param season_type: Optional season type filter
+        :param season_type: Filters results to the specified season type.
         :type season_type: SeasonType
-        :param week: Optional week filter
+        :param week: Filters results to the specified week.
         :type week: int
-        :param poll_type: Optional poll type filter (\"ap\" or \"coaches\")
+        :param poll_type: Filters results to the AP or Coaches Poll.
         :type poll_type: str
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

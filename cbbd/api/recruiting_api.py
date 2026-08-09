@@ -3,7 +3,7 @@
 """
     College Basketball Data API
 
-    This is an API for query various college basketball datasets and analytics. API keys can be acquired by registering on the CollegeBasketballData.com website.
+    Use the College Basketball Data API to query game, team, player, recruiting, and analytics data. Request an API key at [CollegeBasketballData.com](https://collegebasketballdata.com/key).
 
     The version of the OpenAPI document: 1.28.0
     Contact: admin@collegefootballdata.com
@@ -49,27 +49,27 @@ class RecruitingApi:
         self.api_client = api_client
 
     @validate_arguments
-    def get_portal_transfers(self, year : Optional[Union[StrictFloat, StrictInt]] = None, source_team : Annotated[Optional[StrictStr], Field(description="Source team filter")] = None, destination_team : Annotated[Optional[StrictStr], Field(description="Destination team filter")] = None, source_conference : Annotated[Optional[StrictStr], Field(description="Source conference filter")] = None, destination_conference : Annotated[Optional[StrictStr], Field(description="Destination conference filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Position filter")] = None, **kwargs) -> List[Transfer]:  # noqa: E501
+    def get_portal_transfers(self, year : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified transfer season.")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified source team.")] = None, destination_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified destination team.")] = None, source_conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified source conference abbreviation.")] = None, destination_conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified destination conference abbreviation.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position.")] = None, **kwargs) -> List[Transfer]:  # noqa: E501
         """get_portal_transfers  # noqa: E501
 
-        Retrieves historical transfer portal activity  # noqa: E501
+        Returns historical transfer portal activity.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_portal_transfers(year, source_team, destination_team, source_conference, destination_conference, position, async_req=True)
         >>> result = thread.get()
 
-        :param year:
+        :param year: Filters results to the specified transfer season.
         :type year: float
-        :param source_team: Source team filter
+        :param source_team: Filters results to the specified source team.
         :type source_team: str
-        :param destination_team: Destination team filter
+        :param destination_team: Filters results to the specified destination team.
         :type destination_team: str
-        :param source_conference: Source conference filter
+        :param source_conference: Filters results to the specified source conference abbreviation.
         :type source_conference: str
-        :param destination_conference: Destination conference filter
+        :param destination_conference: Filters results to the specified destination conference abbreviation.
         :type destination_conference: str
-        :param position: Position filter
+        :param position: Filters results to the specified player position.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -89,27 +89,27 @@ class RecruitingApi:
         return self.get_portal_transfers_with_http_info(year, source_team, destination_team, source_conference, destination_conference, position, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_portal_transfers_with_http_info(self, year : Optional[Union[StrictFloat, StrictInt]] = None, source_team : Annotated[Optional[StrictStr], Field(description="Source team filter")] = None, destination_team : Annotated[Optional[StrictStr], Field(description="Destination team filter")] = None, source_conference : Annotated[Optional[StrictStr], Field(description="Source conference filter")] = None, destination_conference : Annotated[Optional[StrictStr], Field(description="Destination conference filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Position filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_portal_transfers_with_http_info(self, year : Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Filters results to the specified transfer season.")] = None, source_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified source team.")] = None, destination_team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified destination team.")] = None, source_conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified source conference abbreviation.")] = None, destination_conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified destination conference abbreviation.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_portal_transfers  # noqa: E501
 
-        Retrieves historical transfer portal activity  # noqa: E501
+        Returns historical transfer portal activity.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_portal_transfers_with_http_info(year, source_team, destination_team, source_conference, destination_conference, position, async_req=True)
         >>> result = thread.get()
 
-        :param year:
+        :param year: Filters results to the specified transfer season.
         :type year: float
-        :param source_team: Source team filter
+        :param source_team: Filters results to the specified source team.
         :type source_team: str
-        :param destination_team: Destination team filter
+        :param destination_team: Filters results to the specified destination team.
         :type destination_team: str
-        :param source_conference: Source conference filter
+        :param source_conference: Filters results to the specified source conference abbreviation.
         :type source_conference: str
-        :param destination_conference: Destination conference filter
+        :param destination_conference: Filters results to the specified destination conference abbreviation.
         :type destination_conference: str
-        :param position: Position filter
+        :param position: Filters results to the specified player position.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -229,23 +229,23 @@ class RecruitingApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_recruits(self, year : Annotated[Optional[StrictInt], Field(description="Optional year filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional college team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional college conference filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Optional position filter")] = None, **kwargs) -> List[Recruit]:  # noqa: E501
+    def get_recruits(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified recruiting year.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified college team.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position.")] = None, **kwargs) -> List[Recruit]:  # noqa: E501
         """get_recruits  # noqa: E501
 
-        Retrieves historical composite player recruiting ranking and ratings  # noqa: E501
+        Returns historical composite player recruiting rankings and ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_recruits(year, team, conference, position, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional year filter
+        :param year: Filters results to the specified recruiting year.
         :type year: int
-        :param team: Optional college team filter
+        :param team: Filters results to the specified college team.
         :type team: str
-        :param conference: Optional college conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param position: Optional position filter
+        :param position: Filters results to the specified player position.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -265,23 +265,23 @@ class RecruitingApi:
         return self.get_recruits_with_http_info(year, team, conference, position, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_recruits_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Optional year filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional college team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional college conference filter")] = None, position : Annotated[Optional[StrictStr], Field(description="Optional position filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_recruits_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified recruiting year.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified college team.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, position : Annotated[Optional[StrictStr], Field(description="Filters results to the specified player position.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_recruits  # noqa: E501
 
-        Retrieves historical composite player recruiting ranking and ratings  # noqa: E501
+        Returns historical composite player recruiting rankings and ratings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_recruits_with_http_info(year, team, conference, position, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional year filter
+        :param year: Filters results to the specified recruiting year.
         :type year: int
-        :param team: Optional college team filter
+        :param team: Filters results to the specified college team.
         :type team: str
-        :param conference: Optional college conference filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
-        :param position: Optional position filter
+        :param position: Filters results to the specified player position.
         :type position: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -393,21 +393,21 @@ class RecruitingApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    def get_team_recruiting_rankings(self, year : Annotated[Optional[StrictInt], Field(description="Optional year filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> List[TeamRecruitingRanking]:  # noqa: E501
+    def get_team_recruiting_rankings(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified recruiting year.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> List[TeamRecruitingRanking]:  # noqa: E501
         """get_team_recruiting_rankings  # noqa: E501
 
-        Retrieves historical composite team recruiting rankings  # noqa: E501
+        Returns historical composite team recruiting rankings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_team_recruiting_rankings(year, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional year filter
+        :param year: Filters results to the specified recruiting year.
         :type year: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -427,21 +427,21 @@ class RecruitingApi:
         return self.get_team_recruiting_rankings_with_http_info(year, team, conference, **kwargs)  # noqa: E501
 
     @validate_arguments
-    def get_team_recruiting_rankings_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Optional year filter")] = None, team : Annotated[Optional[StrictStr], Field(description="Optional team filter")] = None, conference : Annotated[Optional[StrictStr], Field(description="Optional conference abbreviation filter")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def get_team_recruiting_rankings_with_http_info(self, year : Annotated[Optional[StrictInt], Field(description="Filters results to the specified recruiting year.")] = None, team : Annotated[Optional[StrictStr], Field(description="Filters results to the specified team name.")] = None, conference : Annotated[Optional[StrictStr], Field(description="Filters results to the specified conference abbreviation.")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """get_team_recruiting_rankings  # noqa: E501
 
-        Retrieves historical composite team recruiting rankings  # noqa: E501
+        Returns historical composite team recruiting rankings.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
         >>> thread = api.get_team_recruiting_rankings_with_http_info(year, team, conference, async_req=True)
         >>> result = thread.get()
 
-        :param year: Optional year filter
+        :param year: Filters results to the specified recruiting year.
         :type year: int
-        :param team: Optional team filter
+        :param team: Filters results to the specified team name.
         :type team: str
-        :param conference: Optional conference abbreviation filter
+        :param conference: Filters results to the specified conference abbreviation.
         :type conference: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
