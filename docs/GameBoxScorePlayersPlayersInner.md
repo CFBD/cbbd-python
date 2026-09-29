@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rebounds** | [**TeamSeasonUnitStatsRebounds**](TeamSeasonUnitStatsRebounds.md) |  | 
+**rebounds** | [**TeamBoxScoreRebounds**](TeamBoxScoreRebounds.md) |  | 
 **free_throws** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **three_point_field_goals** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **two_point_field_goals** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 

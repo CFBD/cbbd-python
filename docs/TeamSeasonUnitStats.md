@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **two_point_field_goals** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **three_point_field_goals** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
 **free_throws** | [**TeamSeasonUnitStatsFieldGoals**](TeamSeasonUnitStatsFieldGoals.md) |  | 
-**rebounds** | [**TeamSeasonUnitStatsRebounds**](TeamSeasonUnitStatsRebounds.md) |  | 
+**rebounds** | [**TeamBoxScoreRebounds**](TeamBoxScoreRebounds.md) |  | 
 **turnovers** | [**TeamSeasonUnitStatsTurnovers**](TeamSeasonUnitStatsTurnovers.md) |  | 
 **fouls** | [**TeamSeasonUnitStatsFouls**](TeamSeasonUnitStatsFouls.md) |  | 
 **points** | [**TeamSeasonUnitStatsPoints**](TeamSeasonUnitStatsPoints.md) |  | 
