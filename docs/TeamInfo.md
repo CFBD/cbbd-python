@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **current_state** | **str** |  | 
 **conference_id** | **int** |  | 
 **conference** | **str** |  | 
+**logos** | **List[str]** |  | 
 
 ## Example
 
