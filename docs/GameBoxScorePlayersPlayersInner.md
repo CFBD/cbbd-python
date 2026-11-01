@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **minutes** | **float** |  | 
 **ejected** | **bool** |  | 
 **starter** | **bool** |  | 
-**position** | **str** |  | 
+**position** | **str** | Blank when the position is unavailable. | 
 **name** | **str** |  | 
 **athlete_source_id** | **str** |  | 
 **athlete_id** | **int** |  | 

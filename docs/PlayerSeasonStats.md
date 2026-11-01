@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **athlete_id** | **int** |  | 
 **athlete_source_id** | **str** |  | 
 **name** | **str** |  | 
-**position** | **str** |  | 
+**position** | **str** | Blank when the position is unavailable. | 
 **games** | **float** |  | 
 **starts** | **float** |  | 
 **minutes** | **float** |  | 
